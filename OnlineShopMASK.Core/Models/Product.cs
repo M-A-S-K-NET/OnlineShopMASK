@@ -32,8 +32,8 @@ namespace OnlineShopMASK.Core.Models
         [Required]
         public string Image { get; set; }
 
-       // [RegularExpression(@"1-5")]
-       // public int Rating { get; set; }
+       [RegularExpression(@"1-5")]
+       public int Rating { get; set; }
        
         
     }
