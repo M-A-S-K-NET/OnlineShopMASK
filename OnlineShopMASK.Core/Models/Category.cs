@@ -9,8 +9,6 @@ namespace OnlineShopMASK.Core.Models
 {
     public class Category
     {
-        public string Id { get; set; }
-
         [Display(Name = "Category Name")]
         [Required]
         [StringLength(100)]
@@ -18,9 +16,6 @@ namespace OnlineShopMASK.Core.Models
         [Display(Name = "Description")]
         [StringLength(600)]
         public string Description { get; set; }
-        public Category()
-        {
-            this.Id = Guid.NewGuid().ToString();
-        }
+       
     }
 }

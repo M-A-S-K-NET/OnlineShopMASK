@@ -10,8 +10,6 @@ namespace OnlineShopMASK.Core.Models
 {
     public class Product
     {
-        public int Id { get; set; }
-
         [Display(Name = "Product Name")]
         [Required]
         [StringLength(300)]
