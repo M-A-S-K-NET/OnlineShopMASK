@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace OnlineShopMASK.Core.Models
 {
-    public class Product
+    public class Product:BaseEntity
     {
         [Display(Name = "Product Name")]
         [Required]
