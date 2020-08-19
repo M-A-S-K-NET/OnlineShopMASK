@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OnlineShopMASK.Core.Models
 {
-    public class Category:BaseEntity
+    public class Category
     {
         [Display(Name = "Category Name")]
         [Required]
