@@ -38,10 +38,10 @@
              <div class="card" style="height:15rem;">
                 <div class="card-body">                                
                    <h4 class="card-title">Customer Information</h4>
-                     <ul>
-                     <li><a href="#" class="card-link">Conditions</a></li>
-                     <li><a href="#" class="card-link">Privacy Policy</a></li>
-                     <li><a href="#" class="card-link">Our Services</a></li>
+                     <ul style="list-style-type: none;">
+                     <li>@Html.ActionLink("Conditions", "Conditions", "Home", null, new { @class = "nav-link" })</li>
+                     <li>@Html.ActionLink("Privacy Policy", "PrivacyPolicy", "Home", null, new { @class = "nav-link" })</li>
+                     <li>@Html.ActionLink("Our Services", "OurServices", "Home", null, new { @class = "nav-link" })</li>
                      </ul>
                                 
                 </div>
@@ -52,10 +52,10 @@
              <div class="card" style="height:15rem;">
                <div class="card-body">
                  <h4 class="card-title">Customer Service</h4>
-                   <ul>
-                   <li><a href="~/Views/Html Pages/Contact.html" class="card-link">Contact</a></li>
-                   <li><a href="~/Views/Html Pages/Contact.html" class="card-link">Warranty & Repair</a></li>
-                   <li><a href="https://support.netonnet.se/hc/sv/articles/360001163225-Vanliga-fr%C3%A5gor-och-svar" class="card-link">FAQ</a></li>
+                   <ul style="list-style-type: none;">
+                   <li>@Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })</li>
+                   <li>@Html.ActionLink("Warranty & Repair", "Warranty", "Home", null, new { @class = "nav-link" })</li>
+                   <li>@Html.ActionLink("FAQ", "FAQ", "Home", null, new { @class = "nav-link" })</li>
                    </ul>
                </div>
              </div>
@@ -65,8 +65,8 @@
              <div class="card" style="height:15rem;">
                <div class="card-body">
                  <h4 class="card-title">About Mask</h4>
-                  <ul>
-                  <li><a href="https://support.netonnet.se/hc/sv/articles/360001159809" class="card-link">About Us</a></li>
+                  <ul style="list-style-type: none;">
+                      <li>@Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link" })</li>
                    </ul>
                </div>
              </div>
@@ -76,7 +76,7 @@
                <div class="card" style="height:15rem;">
                    <div class="card-body">
                        <h4 class="card-title">Payments</h4>
-                       <ul>
+                       <ul style="list-style-type: none;">
                            <li><a href="#" class="card-link"><img src="~/Content/ProductImages/PayPal.png" height="70" width="70" alt="PayPal" class="img-thumbnail"></a></li>
                            <li><a href="#" class="card-link"><img src="~/Content/ProductImages/CreditCard.jpg" height="20" width="70" alt="Credit Card" class="img-thumbnail"></a></li>
                            <li><a href="#" class="card-link"><img src="~/Content/ProductImages/Mastercard.png" height="70" width="70" alt="Master Card" class="img-thumbnail"></a></li>
