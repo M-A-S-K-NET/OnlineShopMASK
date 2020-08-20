@@ -45,7 +45,7 @@ namespace OnlineShopMASK.WebUI
 
             // TODO: Register your type's mappings here.
             // container.RegisterType<IProductRepository, ProductRepository>();
-            container.RegisterType<IRepository<Category>, SqlRepository<Category>>();
+            container.RegisterType<IRepository<ProductCategory>, SqlRepository<ProductCategory>>();
             container.RegisterType<IRepository<Product>, SqlRepository<Product>>();
         }
     }

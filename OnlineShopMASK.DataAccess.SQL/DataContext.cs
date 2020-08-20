@@ -15,7 +15,7 @@ namespace OnlineShopMASK.DataAccess.SQL
 
             }
 
-        public DbSet<Product> Products { get; set; }
-        public DbSet<Category> Categories { get; set; }
+        public DbSet<Product> products { get; set; }
+        public DbSet<ProductCategory> productCategories { get; set; }
     }
 }

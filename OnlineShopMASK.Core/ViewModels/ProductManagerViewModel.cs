@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace OnlineShopMASK.Core.ViewModels
 {
-    public class ProductViewModel
+    public class ProductManagerViewModel
     {
       public Product Product { get; set; }
-      public IEnumerable<Category> Categories { get; set; }
+      public IEnumerable<ProductCategory> ProductCategories { get; set; }
     }
 }

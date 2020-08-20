@@ -9,61 +9,57 @@ using System.Web.Mvc;
 
 namespace OnlineShopMASK.WebUI.Controllers
 {
-    public class CategoryManagerController : Controller
+    public class ProductCategoryManagerController : Controller
     {
-        IRepository<Category> context;
+        IRepository<ProductCategory> context;
 
-        public CategoryManagerController(IRepository<Category> _context)
+        public ProductCategoryManagerController(IRepository<ProductCategory> context)
         {
-            this.context = _context;
+            this.context = context;
         }
-
-        // GET: CategoryManager
+        // GET: ProductManager
         public ActionResult Index()
         {
-            List<Category> Categories = context.Collection().ToList();
-            return View(Categories);
+            List<ProductCategory> productcategories = context.Collection().ToList();
+            return View(productcategories);
         }
-
         public ActionResult Create()
         {
-            Category category = new Category();
-            return View(category);
+            ProductCategory productCategory = new ProductCategory();
+            return View(productCategory);
         }
-
         [HttpPost]
-        public ActionResult Create(Category category)
+        public ActionResult Create(ProductCategory productCategory)
         {
             if (!ModelState.IsValid)
             {
-                return View(category);
+                return View(productCategory);
             }
             else
             {
-                context.Insert(category);
+                context.Insert(productCategory);
                 context.Commit();
                 return RedirectToAction("Index");
+
             }
         }
-
-        public ActionResult Edit(String Id)
+        public ActionResult Edit(string Id)
         {
-            Category category = context.Find(Id);
-            if (category == null)
+            ProductCategory productCategory = context.Find(Id);
+            if (productCategory == null)
             {
                 return HttpNotFound();
             }
             else
             {
-                return View(category);
+                return View(productCategory);
             }
         }
-
         [HttpPost]
-        public ActionResult Edit(Category category, string Id)
+        public ActionResult Edit(ProductCategory productCategory, string Id)
         {
-            Category categoryEdit = context.Find(Id);
-            if (categoryEdit == null)
+            ProductCategory productCategoryToEdit = context.Find(Id);
+            if (productCategoryToEdit == null)
             {
                 return HttpNotFound();
             }
@@ -71,36 +67,34 @@ namespace OnlineShopMASK.WebUI.Controllers
             {
                 if (!ModelState.IsValid)
                 {
-                    return View(category);
+                    return View(productCategory);
                 }
-                categoryEdit.CategoryName = category.CategoryName;
-                categoryEdit.Description = category.Description;
+                productCategoryToEdit.Category = productCategory.Category;
+
+
                 context.Commit();
                 return RedirectToAction("Index");
             }
         }
-
         public ActionResult Delete(string Id)
         {
-            Category categoryToDelete = context.Find(Id);
+            ProductCategory productCategoryToDelete = context.Find(Id);
 
-            if (categoryToDelete == null)
+            if (productCategoryToDelete == null)
             {
                 return HttpNotFound();
             }
             else
             {
-                return View(categoryToDelete);
+                return View(productCategoryToDelete);
             }
         }
-
         [HttpPost]
         [ActionName("Delete")]
         public ActionResult ConfirmDelete(string Id)
         {
-            Category categoryToDelete = context.Find(Id);
-
-            if (categoryToDelete == null)
+            ProductCategory productCategoryToDelete = context.Find(Id);
+            if (productCategoryToDelete == null)
             {
                 return HttpNotFound();
             }
@@ -111,8 +105,5 @@ namespace OnlineShopMASK.WebUI.Controllers
                 return RedirectToAction("Index");
             }
         }
-
-
-
     }
 }

@@ -11,27 +11,19 @@ namespace OnlineShopMASK.Core.Models
     public class Product:BaseEntity
     {
         [Display(Name = "Product Name")]
-        [Required]
-        [StringLength(300)]
-        public string ProductName { get; set; }
         
-        [Required]
+        public string Name { get; set; }
+        
+        
         public string Description { get; set; }
 
-        [Required]
-        public string Category { get; set; }
-
-        [Required]
         [Range(1, 10000)]
         [DataType(DataType.Currency)]
-        
         public decimal Price { get; set; }
 
-        [Required]
+        public string Category { get; set; }
         public string Image { get; set; }
 
-       [RegularExpression(@"1-5")]
-       public int Rating { get; set; }
        
         
     }
