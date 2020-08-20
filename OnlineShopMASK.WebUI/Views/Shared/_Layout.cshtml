@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/Content/Site.css" type="text/css" />
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
@@ -10,7 +11,7 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
+        <div class="Main-container">
             @Html.ActionLink("OnlineShopMASK", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -30,8 +31,82 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+        <div class="Footer-Main-container">
+                
+        <div class="row">
+          <div class="col-md-3">
+             <div class="card" style="height:15rem;">
+                <div class="card-body">                                
+                   <h4 class="card-title">Customer Information</h4>
+                     <ul style="list-style-type: none;">
+                     <li>@Html.ActionLink("Conditions", "Conditions", "Home", null, new { @class = "nav-link" })</li>
+                     <li>@Html.ActionLink("Privacy Policy", "PrivacyPolicy", "Home", null, new { @class = "nav-link" })</li>
+                     <li>@Html.ActionLink("Our Services", "OurServices", "Home", null, new { @class = "nav-link" })</li>
+                     </ul>
+                                
+                </div>
+              </div>
+           </div>
+
+           <div class="col-md-3">
+             <div class="card" style="height:15rem;">
+               <div class="card-body">
+                 <h4 class="card-title">Customer Service</h4>
+                   <ul style="list-style-type: none;">
+                   <li>@Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })</li>
+                   <li>@Html.ActionLink("Warranty & Repair", "Warranty", "Home", null, new { @class = "nav-link" })</li>
+                   <li>@Html.ActionLink("FAQ", "FAQ", "Home", null, new { @class = "nav-link" })</li>
+                   </ul>
+               </div>
+             </div>
+           </div>
+
+           <div class="col-md-3">
+             <div class="card" style="height:15rem;">
+               <div class="card-body">
+                 <h4 class="card-title">About Mask</h4>
+                  <ul style="list-style-type: none;">
+                      <li>@Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link" })</li>
+                   </ul>
+               </div>
+             </div>
+           </div>
+
+           <div class="col-md-3">
+               <div class="card" style="height:15rem;">
+                   <div class="card-body">
+                       <h4 class="card-title">Payments</h4>
+                       <ul style="list-style-type: none;">
+                           <li><a href="#" class="card-link"><img src="~/Content/ProductImages/PayPal.png" height="70" width="70" alt="PayPal" class="img-thumbnail"></a></li>
+                           <li><a href="#" class="card-link"><img src="~/Content/ProductImages/CreditCard.jpg" height="20" width="70" alt="Credit Card" class="img-thumbnail"></a></li>
+                           <li><a href="#" class="card-link"><img src="~/Content/ProductImages/Mastercard.png" height="70" width="70" alt="Master Card" class="img-thumbnail"></a></li>
+                       </ul>
+                   </div>
+               </div>
+           </div>                 
+        </div>
+        </div>
+        <br />
+
+        <div class="Bottom-container">
+        <div class="row">
+        <div class="col-md-12 text-center" >                      
+           @*<div class="card">
+             <div class="card-body">*@
+              <h4 @*class="card-title"*@>Delivery And Gurantee</h4>
+               <a href="#"><img src="~/Content/ProductImages/logo-DHL.png" height="70" width="70" alt="DHL" class="img-thumbnail"></a>
+               <a href="#"><img src="~/Content/ProductImages/Best.png" height="70" width="70" alt="Best" class="img-thumbnail"></a>
+               <a href="#"><img src="~/Content/ProductImages/Budbee.png" height="70" width="70" alt="Budbee" class="img-thumbnail"></a>
+             @*</div>
+           </div>*@
+        </div>
+        </div>
+        </div>
+
+
+
+
+</footer>
     </div>
 
     @Scripts.Render("~/bundles/jquery")

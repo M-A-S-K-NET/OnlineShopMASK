@@ -17,3 +17,16 @@ select,
 textarea {
     max-width: 280px;
 }
+.Footer-Main-container {
+    padding:10px;
+}
+
+.Bottom-container {
+    background-color:grey;
+    padding:10px;
+}
+.card {
+    border:double;
+    
+    padding:5px;
+}
