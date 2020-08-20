@@ -13,6 +13,9 @@
     <tr>
         <th></th>
         <th>
+            @Html.DisplayNameFor(model => model.CreatedAt)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.ProductName)
         </th>
         <th>
@@ -27,7 +30,7 @@
         <th>
             @Html.DisplayNameFor(model => model.Rating)
         </th>
-        
+
         <th></th>
     </tr>
 
@@ -35,6 +38,9 @@
 <tr>
     <td>
         <img class="img-thumnail" style="height:50px" src="~/Content/ProductImages/@item.Image" />
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CreatedAt)
     </td>
     <td>
         @Html.DisplayFor(modelItem => item.ProductName)
