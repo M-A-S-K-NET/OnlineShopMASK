@@ -375,6 +375,9 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\CategoryManager\Index.cshtml" />
+    <Content Include="Views\CategoryManager\Create.cshtml" />
+    <Content Include="Views\CategoryManager\Edit.cshtml" />
+    <Content Include="Views\CategoryManager\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
