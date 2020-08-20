@@ -23,8 +23,8 @@ namespace OnlineShopMASK.WebUI.Controllers
         // GET: ProductManager
         public ActionResult Index()
         {
-            List<Product> product = context.Collection().ToList();
-            return View(product);
+            List<Product> products = context.Collection().ToList();
+            return View(products);
         }
 
         public ActionResult Create()
