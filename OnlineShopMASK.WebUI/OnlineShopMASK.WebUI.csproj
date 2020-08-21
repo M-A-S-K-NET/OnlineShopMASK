@@ -221,6 +221,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\ProductImages\lego.jpg" />
+    <Content Include="Content\ProductImages\phone.jpg" />
     <Content Include="Content\ProductImages\r2d2.jpg" />
     <Content Include="Content\ProductImages\Solider-toy.jpg" />
     <Content Include="favicon.ico" />
@@ -249,6 +250,15 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Content\ProductImages\asus-vivobook-14-baerbar-dator.webp" />
+    <Content Include="Content\ProductImages\huawei-p30-pro-smartphone-128-gb-breathing-crystal.webp" />
+    <Content Include="Content\ProductImages\ipad-pro-129-2020-128-gb-wifi-rymdgraa.webp" />
+    <Content Include="Content\ProductImages\iphone-7-32-gb-matt-svart.webp" />
+    <Content Include="Content\ProductImages\lenovo-ideapad-3-14-baerbar-dator-platinagraa.webp" />
+    <Content Include="Content\ProductImages\lenovo-tab-m10-hd-32gb-wifi-101-surfplatta.webp" />
+    <Content Include="Content\ProductImages\samsung-galaxy-book-flex-133-2-i-1-royal-blue.webp" />
+    <Content Include="Content\ProductImages\samsung-galaxy-note10-lite-smartphone-aura-glow.webp" />
+    <Content Include="Content\ProductImages\samsung-galaxy-tab-a-101-wifi-2019-32-gb-svart.webp" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
