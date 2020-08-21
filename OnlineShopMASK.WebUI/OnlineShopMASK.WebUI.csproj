@@ -199,10 +199,8 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\CategoryManagerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\ProductManagerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -374,16 +372,6 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\CategoryManager\Index.cshtml" />
-    <Content Include="Views\Home\Conditions.cshtml" />
-    <Content Include="Views\Home\FAQ.cshtml" />
-    <Content Include="Views\Home\OurServices.cshtml" />
-    <Content Include="Views\Home\PrivacyPolicy.cshtml" />
-    <Content Include="Views\Home\Warranty.cshtml" />
-    <Content Include="Views\ProductManager\Index.cshtml" />
-    <Content Include="Views\ProductManager\Create.cshtml" />
-    <Content Include="Views\ProductManager\Edit.cshtml" />
-    <Content Include="Views\ProductManager\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
