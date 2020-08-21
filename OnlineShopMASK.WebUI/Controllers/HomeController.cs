@@ -32,6 +32,21 @@ namespace OnlineShopMASK.WebUI.Controllers
             return View(products.ToList());
         }
 
+        public ActionResult Details(string id)
+        {
+            Product product = context.Find(id);
+            if (product == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+
+                return View(product);
+            }
+
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "About Mask Online Shop";

@@ -9,6 +9,8 @@
 <div class="container">
     <div class="col-md-2">
         <img class="img-responsive" src="~/Content/ProductImages/@Model.Image" />
+
+
     </div>
 
     <div class="col-md-10">
@@ -21,7 +23,6 @@
                 @Html.DisplayFor(model => model.Description)
             </dd>
 
-
             <dt>
                 @Html.DisplayNameFor(model => model.Price)
             </dt>
@@ -33,13 +34,17 @@
             <dt></dt>
 
             <dd> <a href="#" class="btn btn-primary"> Add to cart</a></dd>
-            <dd> <a href="#" class="btn btn-primary"> Add to WishList</a></dd>
+            <dd> <a href="#" class="btn btn-primary"> Add to Wishlist</a></dd>
 
         </dl>
     </div>
 </div>
+
 <div style="float:right">
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Go back", "Index")
 </div>
 
-<div class="col-md-12 clearfix"></div>
+<div class="col-md-12 clearfix">
+
+
+</div>
