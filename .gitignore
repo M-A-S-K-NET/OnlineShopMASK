@@ -12,7 +12,7 @@
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
-Web.config
+
 
 # Build results
 [Dd]ebug/
@@ -337,6 +337,4 @@ ASALocalRun/
 # Local History for Visual Studio
 .localhistory/
 
-# BeatPulse healthcheck temp database
-healthchecksdb
-/OnlineShopMASK.DataAccess.SQL/Migrations
+
