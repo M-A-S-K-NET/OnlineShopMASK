@@ -1,4 +1,6 @@
-﻿using System;
+﻿using OnlineShopMASK.Core.Interface;
+using OnlineShopMASK.Core.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +10,26 @@ namespace OnlineShopMASK.WebUI.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        IRepository<Product> context;
+        IRepository<ProductCategory> productCategories;
+
+        public HomeController(IRepository<Product> productContext, IRepository<ProductCategory> productCategoryContext)
         {
-            return View();
+            context = productContext;
+            productCategories = productCategoryContext;
+        }
+        public ActionResult Index(string SearchString)
+        {
+            var products = from p in context.Collection()
+                           select p;
+
+            if (!String.IsNullOrEmpty(SearchString))
+            {
+                products = products.Where(s => s.Name.Contains(SearchString));
+
+            }
+
+            return View(products.ToList());
         }
 
         public ActionResult About()

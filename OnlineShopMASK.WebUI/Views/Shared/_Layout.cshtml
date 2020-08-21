@@ -10,16 +10,32 @@
 
 </head>
 <body>
+    <div class="row" style="padding-left:50px">
+        <h2>MaskShopping.Se</h2>
+        <div style="padding-left:20px;padding-top:10px">
+            <form asp-controller="ProductManager" asp-action="Index">
+                <p>
+
+                    <input type="text" name="searchString">
+                    <input type="submit" value="Search" />
+
+                </p>
+            </form>
+        </div>
+    </div>
+    
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="Main-container">
-            @Html.ActionLink("OnlineShopMASK", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
+        <div class="container">
+            @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav mr-auto">
-                    <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("All Products", "Index", "ProductView", null, new { @class = "nav-link" })</li>
                     <li class="nav-item">@Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link" })</li>
                     <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })</li>
                 </ul>
@@ -31,82 +47,82 @@
         @RenderBody()
         <hr />
         <footer>
-        <div class="Footer-Main-container">
-                
-        <div class="row">
-          <div class="col-md-3">
-             <div class="card" style="height:15rem;">
-                <div class="card-body">                                
-                   <h4 class="card-title">Customer Information</h4>
-                     <ul style="list-style-type: none;">
-                     <li>@Html.ActionLink("Conditions", "Conditions", "Home", null, new { @class = "nav-link" })</li>
-                     <li>@Html.ActionLink("Privacy Policy", "PrivacyPolicy", "Home", null, new { @class = "nav-link" })</li>
-                     <li>@Html.ActionLink("Our Services", "OurServices", "Home", null, new { @class = "nav-link" })</li>
-                     </ul>
-                                
+            <div class="Footer-Main-container">
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card" style="height:15rem;">
+                            <div class="card-body">
+                                <h4 class="card-title">Customer Information</h4>
+                                <ul style="list-style-type: none;">
+                                    <li>@Html.ActionLink("Conditions", "Conditions", "Home", null, new { @class = "nav-link" })</li>
+                                    <li>@Html.ActionLink("Privacy Policy", "PrivacyPolicy", "Home", null, new { @class = "nav-link" })</li>
+                                    <li>@Html.ActionLink("Our Services", "OurServices", "Home", null, new { @class = "nav-link" })</li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card" style="height:15rem;">
+                            <div class="card-body">
+                                <h4 class="card-title">Customer Service</h4>
+                                <ul style="list-style-type: none;">
+                                    <li>@Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })</li>
+                                    <li>@Html.ActionLink("Warranty & Repair", "Warranty", "Home", null, new { @class = "nav-link" })</li>
+                                    <li>@Html.ActionLink("FAQ", "FAQ", "Home", null, new { @class = "nav-link" })</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card" style="height:15rem;">
+                            <div class="card-body">
+                                <h4 class="card-title">About Mask</h4>
+                                <ul style="list-style-type: none;">
+                                    <li>@Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link" })</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card" style="height:15rem;">
+                            <div class="card-body">
+                                <h4 class="card-title">Payments</h4>
+                                <ul style="list-style-type: none;">
+                                    <li><a href="#" class="card-link"><img src="~/Content/ProductImages/PayPal.png" height="70" width="70" alt="PayPal" class="img-thumbnail"></a></li>
+                                    <li><a href="#" class="card-link"><img src="~/Content/ProductImages/CreditCard.jpg" height="20" width="70" alt="Credit Card" class="img-thumbnail"></a></li>
+                                    <li><a href="#" class="card-link"><img src="~/Content/ProductImages/Mastercard.png" height="70" width="70" alt="Master Card" class="img-thumbnail"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-           </div>
+            </div>
+            <br />
 
-           <div class="col-md-3">
-             <div class="card" style="height:15rem;">
-               <div class="card-body">
-                 <h4 class="card-title">Customer Service</h4>
-                   <ul style="list-style-type: none;">
-                   <li>@Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })</li>
-                   <li>@Html.ActionLink("Warranty & Repair", "Warranty", "Home", null, new { @class = "nav-link" })</li>
-                   <li>@Html.ActionLink("FAQ", "FAQ", "Home", null, new { @class = "nav-link" })</li>
-                   </ul>
-               </div>
-             </div>
-           </div>
-
-           <div class="col-md-3">
-             <div class="card" style="height:15rem;">
-               <div class="card-body">
-                 <h4 class="card-title">About Mask</h4>
-                  <ul style="list-style-type: none;">
-                      <li>@Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link" })</li>
-                   </ul>
-               </div>
-             </div>
-           </div>
-
-           <div class="col-md-3">
-               <div class="card" style="height:15rem;">
-                   <div class="card-body">
-                       <h4 class="card-title">Payments</h4>
-                       <ul style="list-style-type: none;">
-                           <li><a href="#" class="card-link"><img src="~/Content/ProductImages/PayPal.png" height="70" width="70" alt="PayPal" class="img-thumbnail"></a></li>
-                           <li><a href="#" class="card-link"><img src="~/Content/ProductImages/CreditCard.jpg" height="20" width="70" alt="Credit Card" class="img-thumbnail"></a></li>
-                           <li><a href="#" class="card-link"><img src="~/Content/ProductImages/Mastercard.png" height="70" width="70" alt="Master Card" class="img-thumbnail"></a></li>
-                       </ul>
-                   </div>
-               </div>
-           </div>                 
-        </div>
-        </div>
-        <br />
-
-        <div class="Bottom-container">
-        <div class="row">
-        <div class="col-md-12 text-center" >                      
-           @*<div class="card">
-             <div class="card-body">*@
-              <h4 @*class="card-title"*@>Delivery And Gurantee</h4>
-               <a href="#"><img src="~/Content/ProductImages/logo-DHL.png" height="70" width="70" alt="DHL" class="img-thumbnail"></a>
-               <a href="#"><img src="~/Content/ProductImages/Best.png" height="70" width="70" alt="Best" class="img-thumbnail"></a>
-               <a href="#"><img src="~/Content/ProductImages/Budbee.png" height="70" width="70" alt="Budbee" class="img-thumbnail"></a>
-             @*</div>
-           </div>*@
-        </div>
-        </div>
-        </div>
+            <div class="Bottom-container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        @*<div class="card">
+                            <div class="card-body">*@
+                        <h4 @*class="card-title"*@>Delivery And Gurantee</h4>
+                        <a href="#"><img src="~/Content/ProductImages/logo-DHL.png" height="70" width="70" alt="DHL" class="img-thumbnail"></a>
+                        <a href="#"><img src="~/Content/ProductImages/Best.png" height="70" width="70" alt="Best" class="img-thumbnail"></a>
+                        <a href="#"><img src="~/Content/ProductImages/Budbee.png" height="70" width="70" alt="Budbee" class="img-thumbnail"></a>
+                        @*</div>
+                            </div>*@
+                    </div>
+                </div>
+            </div>
 
 
 
 
-</footer>
+        </footer>
     </div>
 
     @Scripts.Render("~/bundles/jquery")

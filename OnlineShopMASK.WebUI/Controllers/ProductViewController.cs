@@ -55,5 +55,19 @@ namespace OnlineShopMASK.WebUI.Controllers
             }
 
         }
+
+        public ActionResult Search(string SearchString)
+        {
+            var products = from p in context.Collection()
+                           select p;
+
+            if (!String.IsNullOrEmpty(SearchString))
+            {
+                products = products.Where(s => s.Name.Contains(SearchString));
+               
+            }
+
+            return View(products.ToList());
+        }
     }
 }
