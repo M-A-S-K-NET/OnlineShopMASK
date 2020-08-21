@@ -391,10 +391,11 @@
     <Content Include="Views\ProductCategoryManager\Delete.cshtml" />
     <Content Include="Views\ProductView\Index.cshtml" />
     <Content Include="Views\ProductView\Details.cshtml" />
+    <Content Include="Views\Basket\Index.cshtml" />
+    <Content Include="Views\Basket\BasketSummary.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Basket\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -415,6 +416,10 @@
     <ProjectReference Include="..\OnlineShopMASK.DataAccess.SQL\OnlineShopMASK.DataAccess.SQL.csproj">
       <Project>{2E9AA3E3-C45E-4094-A64B-380DA7059283}</Project>
       <Name>OnlineShopMASK.DataAccess.SQL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OnlineShopMASK.Services\OnlineShopMASK.Services.csproj">
+      <Project>{65CA21A0-C47B-4D9F-9761-749568E63229}</Project>
+      <Name>OnlineShopMASK.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
