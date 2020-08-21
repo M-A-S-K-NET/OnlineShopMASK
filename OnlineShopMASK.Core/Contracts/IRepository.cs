@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OnlineShopMASK.Core.Interface
+namespace OnlineShopMASK.Core.Contracts
 {
     public interface IRepository<T> where T : BaseEntity
     {

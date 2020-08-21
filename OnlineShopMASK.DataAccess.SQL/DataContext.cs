@@ -17,5 +17,11 @@ namespace OnlineShopMASK.DataAccess.SQL
 
         public DbSet<Product> products { get; set; }
         public DbSet<ProductCategory> productCategories { get; set; }
+        public DbSet<Basket> Baskets { get; set; }
+        public DbSet<BasketItem> BasketItems { get; set; }
+        //Add customers in here and Add-Migration
+        public DbSet<Customer> Customers { get; set; }
+        //Add those models to Entity Framework... And when you done with that add a new migration...
+        public DbSet<Order> Orders { get; set; }
     }
 }

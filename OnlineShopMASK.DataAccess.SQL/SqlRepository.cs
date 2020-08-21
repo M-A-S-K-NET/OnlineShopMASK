@@ -1,4 +1,4 @@
-﻿using OnlineShopMASK.Core.Interface;
+﻿using OnlineShopMASK.Core.Contracts;
 using OnlineShopMASK.Core.Models;
 using System;
 using System.Collections.Generic;
