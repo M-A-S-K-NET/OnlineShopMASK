@@ -2,9 +2,11 @@ using OnlineShopMASK.Core.Contracts;
 using OnlineShopMASK.Core.Models;
 using OnlineShopMASK.DataAccess.SQL;
 using OnlineShopMASK.Services;
+using OnlineShopMASK.WebUI.Controllers;
 using System;
 
 using Unity;
+using Unity.Injection;
 
 namespace OnlineShopMASK.WebUI
 {
@@ -54,6 +56,8 @@ namespace OnlineShopMASK.WebUI
             container.RegisterType<IRepository<Order>, SqlRepository<Order>>();
             container.RegisterType<IBasketService, BasketService>();
             container.RegisterType<IOrderService, OrderService>();
+            // Login user
+            container.RegisterType<AccountController>(new InjectionConstructor());
         }
     }
 }
