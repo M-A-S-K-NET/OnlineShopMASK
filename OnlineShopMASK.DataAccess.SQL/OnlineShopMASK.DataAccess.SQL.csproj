@@ -51,7 +51,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataContext.cs" />
+    <Compile Include="Migrations\202008201358152_InitialCreate.cs" />
+    <Compile Include="Migrations\202008201358152_InitialCreate.Designer.cs">
+      <DependentUpon>202008201358152_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -62,6 +68,11 @@
       <Project>{D8336233-9F5C-432D-B83F-663B2F2ADCBD}</Project>
       <Name>OnlineShopMASK.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202008201358152_InitialCreate.resx">
+      <DependentUpon>202008201358152_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

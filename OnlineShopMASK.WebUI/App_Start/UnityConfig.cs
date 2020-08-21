@@ -1,3 +1,6 @@
+using OnlineShopMASK.Core.Interface;
+using OnlineShopMASK.Core.Models;
+using OnlineShopMASK.DataAccess.SQL;
 using System;
 
 using Unity;
@@ -42,6 +45,8 @@ namespace OnlineShopMASK.WebUI
 
             // TODO: Register your type's mappings here.
             // container.RegisterType<IProductRepository, ProductRepository>();
+            container.RegisterType<IRepository<ProductCategory>, SqlRepository<ProductCategory>>();
+            container.RegisterType<IRepository<Product>, SqlRepository<Product>>();
         }
     }
 }
