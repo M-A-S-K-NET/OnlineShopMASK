@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace OnlineShopMASK.WebUI.Controllers
 {
+    [Authorize]
     public class ProductCategoryManagerController : Controller
     {
         IRepository<ProductCategory> context;
@@ -23,6 +24,7 @@ namespace OnlineShopMASK.WebUI.Controllers
             List<ProductCategory> productcategories = context.Collection().ToList();
             return View(productcategories);
         }
+        [Authorize(Roles ="Admin,Customer")]
         public ActionResult Create()
         {
             ProductCategory productCategory = new ProductCategory();
@@ -43,6 +45,7 @@ namespace OnlineShopMASK.WebUI.Controllers
 
             }
         }
+        [Authorize(Roles ="Admin")]
         public ActionResult Edit(string Id)
         {
             ProductCategory productCategory = context.Find(Id);
@@ -76,6 +79,7 @@ namespace OnlineShopMASK.WebUI.Controllers
                 return RedirectToAction("Index");
             }
         }
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(string Id)
         {
             ProductCategory productCategoryToDelete = context.Find(Id);

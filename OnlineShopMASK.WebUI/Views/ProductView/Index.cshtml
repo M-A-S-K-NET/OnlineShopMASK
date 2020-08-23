@@ -23,18 +23,18 @@
             @foreach (var item in Model.Products)
             {
                 <div class="col-sm-4" style="height:800px;">
-                    <div class="card border-dark mb-1">
+                    <div class="card border-dark mb-1" style="height:750px;">
                         <img class="card-img-top" style="height:150px" src="~/Content/ProductImages/@item.Image" />
                         <div class="card-body">
-                            <h5 class="card-title">
+                            <h5 class="card-title" style="height:100px">
                                 <strong>
                                     @Html.ActionLink(item.Name, "Details", new { id = item.Id })
                                 </strong>
                             </h5>
-                            <p class="card-text">@item.Description</p>
-                            <p class="card-text">@item.Price</p>
+                            <p class="card-text" style="height:300px" >@item.Description</p>
+                            <p class="card-text" style="height:50px"><strong>Price:</strong>@item.Price</p><hr />
 
-                            <a href="@Url.Action("AddToBasket", "Basket", new { Id=item.Id})" class="btn btn-default">Add to Basket</a>
+                            <a href="@Url.Action("AddToBasket", "Basket", new { Id=item.Id})" class="btn btn-primary">Add to Basket</a>
 
                         </div>
                     </div>

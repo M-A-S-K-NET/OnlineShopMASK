@@ -205,6 +205,8 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductManagerController.cs" />
     <Compile Include="Controllers\ProductViewController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
+    <Compile Include="Controllers\usersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -403,6 +405,8 @@
     <Content Include="Views\Basket\BasketSummary.cshtml" />
     <Content Include="Views\ProductView\Search.cshtml" />
     <Content Include="Views\Home\Details.cshtml" />
+    <Content Include="Views\users\Index.cshtml" />
+    <Content Include="Views\Role\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

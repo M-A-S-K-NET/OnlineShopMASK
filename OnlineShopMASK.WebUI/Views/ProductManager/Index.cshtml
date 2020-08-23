@@ -48,8 +48,16 @@
             </td>
 
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                @if (User.IsInRole("Admin"))
+                {
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id })<br />
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+
+                }
+
+
+
+
             </td>
         </tr>
     }

@@ -10,6 +10,8 @@ using System.Web.Mvc;
 
 namespace OnlineShopMASK.WebUI.Controllers
 {
+    [Authorize]
+    
     public class ProductManagerController : Controller
     {
         IRepository<Product> context;
@@ -22,11 +24,13 @@ namespace OnlineShopMASK.WebUI.Controllers
         }
 
         // GET: ProductManager
+        [Authorize(Roles ="Admin,Customer,User")]
         public ActionResult Index()
         {
             List<Product> products = context.Collection().ToList();
             return View(products);
         }
+        [Authorize(Roles ="Admin,Customer")]
         public ActionResult Create()
         {
             ProductManagerViewModel viewModel = new ProductManagerViewModel();
@@ -54,6 +58,7 @@ namespace OnlineShopMASK.WebUI.Controllers
 
             }
         }
+        [Authorize(Roles ="Admin")]
         public ActionResult Edit(string Id)
         {
             Product product = context.Find(Id);
@@ -97,6 +102,7 @@ namespace OnlineShopMASK.WebUI.Controllers
                 return RedirectToAction("Index");
             }
         }
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(string Id)
         {
             Product productToDelete = context.Find(Id);
