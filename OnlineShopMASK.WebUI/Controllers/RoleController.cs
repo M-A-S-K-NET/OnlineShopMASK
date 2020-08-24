@@ -9,9 +9,14 @@ using System.Web.Mvc;
 
 namespace OnlineShopMASK.WebUI.Controllers
 {
+    [Authorize]
     public class RoleController : Controller
     {
         ApplicationDbContext context;
+        public RoleController()
+        {
+            context = new ApplicationDbContext();
+        }
         // GET: Role
         public ActionResult Index()
         {
@@ -50,6 +55,19 @@ namespace OnlineShopMASK.WebUI.Controllers
                 }
             }
             return false;
+        }
+        [Authorize(Roles ="Admin")]
+        public ActionResult Create()
+        {
+            var Role = new IdentityRole();
+            return View(Role);
+        }
+        [HttpPost]
+        public ActionResult Create(IdentityRole Role)
+        {
+            context.Roles.Add(Role);
+            context.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }

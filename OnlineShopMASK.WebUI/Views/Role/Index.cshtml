@@ -1,33 +1,30 @@
 ﻿@model IEnumerable<Microsoft.AspNet.Identity.EntityFramework.IdentityRole>
 @{
-    ViewBag.Title = "Add Role";
+    ViewBag.Title = "Manage Role";
 }
-<table style=" background-color:white; border: dashed 3px slateGray; padding: 5px;width: 99%;table-layout:fixed;" cellpadding="6" cellspacing="6">
-    <tr style="height: 30px; background-color:steelBlue ; color:white ;border: solid 1px cornflowerBlue;">
-        <td align="center" colspan="2">
-            <h2> Create User Roles</h2>
-        </td>
-
-    </tr>
-
+<h2>Manage Role</h2>
+<table><tr><td style="height:20px;"></td></tr></table>
+<table id="tbrole" style="width:30%; border:solid 4px red; background-color:skyblue; padding-left:10px;">
     <tr>
-        <td>
-            <table id="tbrole" style="width:100%; border:dotted 1px; background-color:gainsboro; padding-left:10px;">
-
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td style="width:100%; border:dotted 1px;">
-                            @item.Name
-                        </td>
-                    </tr>
-}
-            </table>
-        </td>
-        <td align="right" style="color:white;padding-right:10;">
-
-
-            <h3>   @Html.ActionLink("Click to Create New Role", "Create", "Role") </h3>
+        <td style="background:green; color:white; padding:10px;">
+            Role Name
         </td>
     </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td style="padding:10px; border-bottom:1px solid #ff006e;">
+                @item.Name
+            </td>
+        </tr>
+
+    }
 </table>
+<table>
+    <tr><td style="height:20px;"></td></tr>
+    <tr>
+        <td style="height:20px; text-align:right;">
+            @Html.ActionLink("Add New Role", "Create", "Role")
+        </td>
+    </tr>
+</table>  

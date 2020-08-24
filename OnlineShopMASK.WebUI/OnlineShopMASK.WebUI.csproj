@@ -407,6 +407,7 @@
     <Content Include="Views\Home\Details.cshtml" />
     <Content Include="Views\users\Index.cshtml" />
     <Content Include="Views\Role\Index.cshtml" />
+    <Content Include="Views\Role\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
