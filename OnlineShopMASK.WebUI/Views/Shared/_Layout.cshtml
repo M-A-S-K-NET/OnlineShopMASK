@@ -38,13 +38,19 @@
                     <li class="nav-item">@Html.ActionLink("All Products", "Index", "ProductView", null, new { @class = "nav-link" })</li>
 
                     @if (User.Identity.IsAuthenticated)
-                     {
-                        if (User.IsInRole("Admin")|| User.IsInRole("Customer"))
+
+                    {
+                        if (User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item">@Html.ActionLink("Manage Role", "Index", "Role", null, new { @class = "nav-link" })</li>
+                        }
+                        if (User.IsInRole("Admin") || User.IsInRole("Customer"))
                         {
                             <li class="nav-item">@Html.ActionLink("ProductAdmin", "Index", "ProductManager", null, new { @class = "nav-link" })</li>
                             <li class="nav-item">@Html.ActionLink("CategoryAdmin", "Index", "ProductCategoryManager", null, new { @class = "nav-link" })</li>
                         }
                     }
+
 
                 </ul>
                 @Html.Partial("_LoginPartial")

@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace OnlineShopMASK.WebUI.Controllers
 {
+    [AllowAnonymous]
     public class ProductViewController : Controller
     {
         // GET: ProductView
