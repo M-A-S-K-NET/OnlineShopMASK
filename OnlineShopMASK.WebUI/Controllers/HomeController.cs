@@ -18,6 +18,7 @@ namespace OnlineShopMASK.WebUI.Controllers
             context = productContext;
             productCategories = productCategoryContext;
         }
+        [AllowAnonymous]
         public ActionResult Index(string SearchString)
         {
             var products = from p in context.Collection()
@@ -31,7 +32,7 @@ namespace OnlineShopMASK.WebUI.Controllers
 
             return View(products.ToList());
         }
-
+        [AllowAnonymous]
         public ActionResult Details(string id)
         {
             Product product = context.Find(id);
