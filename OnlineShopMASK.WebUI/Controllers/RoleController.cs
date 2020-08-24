@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace OnlineShopMASK.WebUI.Controllers
 {
-    [Authorize]
+   
     public class RoleController : Controller
     {
         ApplicationDbContext context;
