@@ -41,30 +41,38 @@ namespace OnlineShopMASK.WebUI.Controllers
 
             return PartialView(basketSummary);
         }
-        [Authorize]
+        //[Authorize]
+        //public ActionResult Checkout()
+        //{
+        //    Customer customer = customers.Collection().FirstOrDefault(c => c.Email == User.Identity.Name);
+        //    if (customer != null)
+        //    {
+        //        Order order = new Order()
+        //        {
+        //            Email = customer.Email,
+        //            City = customer.City,
+        //            State = customer.State,
+        //            Street = customer.Street,
+        //            FirstName = customer.FirstName,
+        //            Surname = customer.LastName,
+        //            ZipCode = customer.ZipCode
+
+        //        };
+        //        return View(order);
+        //    }
+        //    else
+        //    {
+        //        return RedirectToAction("Error");
+        //    }
+        //}
+
+
         public ActionResult Checkout()
         {
-            Customer customer = customers.Collection().FirstOrDefault(c => c.Email == User.Identity.Name);
-            if (customer != null)
-            {
-                Order order = new Order()
-                {
-                    Email = customer.Email,
-                    City = customer.City,
-                    State = customer.State,
-                    Street = customer.Street,
-                    FirstName = customer.FirstName,
-                    Surname = customer.LastName,
-                    ZipCode = customer.ZipCode
-
-                };
-                return View(order);
-            }
-            else
-            {
-                return RedirectToAction("Error");
-            }
+            
+            return View();
         }
+
         [HttpPost]
         [Authorize]
         public ActionResult Checkout(Order order)
