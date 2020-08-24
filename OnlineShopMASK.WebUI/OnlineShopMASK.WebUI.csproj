@@ -223,6 +223,8 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\ProductImages\11cbf337-e361-4ec9-a58d-3b336c442a30.jpg" />
     <Content Include="Content\ProductImages\28ede8f9-569d-4486-915c-cfe64a579042.jpg" />
     <Content Include="Content\ProductImages\603f9174-1697-454a-b39d-ebe1d6829c28.jpg" />
@@ -235,6 +237,7 @@
     <Content Include="Content\ProductImages\f2f3ed2d-e647-4bc8-ab1c-f825f3230f6a.jpg" />
     <Content Include="Content\ProductImages\c9e75c57-9779-4e81-acef-be8cfe38d5be.jpg" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -260,6 +263,11 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -410,6 +418,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\rating\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -4,6 +4,7 @@
     ViewBag.Title = Model.Name + "Details";
 }
 
+
 <h2>@Html.DisplayFor(model => model.Name)</h2>
 
 <div class="container">
@@ -38,8 +39,26 @@
         </dl>
     </div>
 </div>
+<ajaxToolkit:Rating ID="r1" runat="server"
+                    CurrentRating="0" MaxRating="5"
+                    EmptyStarCssClass="far fa-star" FilledStarCssClass="far fa-star"
+                    StarCssClass="far fa-star" WaitingStarCssClass="fas fa-star" />
+<asp:Label ID="Label1" runat="server" />
+<input type="submit" id="Submit1" runat="server" value="Rate!" />
+
 <div style="float:right">
     @Html.ActionLink("Back to List", "Index")
 </div>
 
 <div class="col-md-12 clearfix"></div>
+
+<asp:ScriptManager ID="asm" runat="server" />
+<script runat="server">
+ void Page_Load()
+ {
+ if (Page.IsPostBack)
+ {
+ Label1.Text = "Your rating: " + r1.CurrentRating;
+ }
+ }
+</script>
