@@ -24,7 +24,7 @@ namespace OnlineShopMASK.WebUI.Controllers
             List<ProductCategory> productcategories = context.Collection().ToList();
             return View(productcategories);
         }
-        [Authorize(Roles ="Admin,Customer")]
+        [Authorize(Roles ="Admin,Supplier")]
         public ActionResult Create()
         {
             ProductCategory productCategory = new ProductCategory();

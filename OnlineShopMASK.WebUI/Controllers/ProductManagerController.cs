@@ -24,13 +24,13 @@ namespace OnlineShopMASK.WebUI.Controllers
         }
 
         // GET: ProductManager
-        [Authorize(Roles ="Admin,Customer,User")]
+        [Authorize(Roles ="Admin,Supplier,User")]
         public ActionResult Index()
         {
             List<Product> products = context.Collection().ToList();
             return View(products);
         }
-        [Authorize(Roles ="Admin,Customer")]
+        [Authorize(Roles ="Admin,Supplier")]
         public ActionResult Create()
         {
             ProductManagerViewModel viewModel = new ProductManagerViewModel();

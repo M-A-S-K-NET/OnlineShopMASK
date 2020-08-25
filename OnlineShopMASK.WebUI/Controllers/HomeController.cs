@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace OnlineShopMASK.WebUI.Controllers
 {
+    [AllowAnonymous]
     public class HomeController : Controller
     {
         IRepository<Product> context;

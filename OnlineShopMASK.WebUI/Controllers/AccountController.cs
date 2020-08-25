@@ -12,7 +12,7 @@ using OnlineShopMASK.WebUI.Models;
 
 namespace OnlineShopMASK.WebUI.Controllers
 {
-    [Authorize]
+   
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;

@@ -60,10 +60,10 @@ namespace OnlineShopMASK.WebUI
             }
 
             // creating Creating Employee role   
-            if (!roleManager.RoleExists("Customer"))
+            if (!roleManager.RoleExists("Supplier"))
             {
                 var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
-                role.Name = "Customer";
+                role.Name = "Supplier";
                 roleManager.Create(role);
 
             }
