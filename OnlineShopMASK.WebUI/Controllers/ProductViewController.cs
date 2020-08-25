@@ -21,11 +21,11 @@ namespace OnlineShopMASK.WebUI.Controllers
             context = productContext;
             productCategories = productCategoryContext;
         }
-        public ActionResult Index(string Category = null)
+        public ActionResult Index(string Category,string SearchString)
         {
             List<Product> products;
             List<ProductCategory> categories = productCategories.Collection().ToList();
-
+            Category = null;
             if (Category == null)
             {
                 products = context.Collection().ToList();
@@ -33,6 +33,12 @@ namespace OnlineShopMASK.WebUI.Controllers
             else
             {
                 products = context.Collection().Where(p => p.Category == Category).ToList();
+
+            }
+
+            if (!String.IsNullOrEmpty(SearchString))
+            {
+                products = context.Collection().Where(s => s.Name.Contains(SearchString)).ToList();
 
             }
             ProductListViewModel model = new ProductListViewModel();
