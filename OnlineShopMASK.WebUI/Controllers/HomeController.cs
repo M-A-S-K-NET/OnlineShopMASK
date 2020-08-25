@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace OnlineShopMASK.WebUI.Controllers
 {
+    
     public class HomeController : Controller
     {
         IRepository<Product> context;
@@ -47,10 +48,10 @@ namespace OnlineShopMASK.WebUI.Controllers
             }
 
         }
-
+        [AllowAnonymous]
         public ActionResult About()
         {
-            ViewBag.Message = "About Mask Online Shop";
+            ViewBag.Message = "Welcome to MaskShopping.se";
             return View();
         }
 
@@ -78,9 +79,10 @@ namespace OnlineShopMASK.WebUI.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         public ActionResult Warranty()
         {
-            ViewBag.Message = "Warranty & Repair ";
+            ViewBag.Message = "Return & Repair ";
             return View();
         }
 

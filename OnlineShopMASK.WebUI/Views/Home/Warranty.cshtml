@@ -1,9 +1,96 @@
 ﻿
 @{
-    ViewBag.Title = "Warranty Page";
+    ViewBag.Title = "Product help and return";
 }
+
+<script src="~/Scripts/bootstrap.js"></script>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lacinia nulla ac consectetur sollicitudin. Aliquam erat volutpat. Donec efficitur euismod ultrices. Fusce sed urna dolor. Praesent pellentesque volutpat fermentum. Pellentesque egestas orci ac egestas viverra. Pellentesque quis mauris laoreet, placerat eros eu, pulvinar libero. Maecenas nec enim non eros ultrices vulputate. Pellentesque vel quam eu tellus facilisis porttitor. Nulla in imperdiet sem. Donec at molestie mauris. Morbi aliquet erat ac pellentesque sodales. Vestibulum suscipit, lectus ac facilisis malesuada, lectus odio consequat odio, in consectetur leo mi vel magna. Aliquam scelerisque enim mauris, vel interdum ipsum pulvinar non. Nunc tempus facilisis tellus, eu luctus sem efficitur sit amet.</p>
+<p>
+    If you discover a defect in a product you have purchased from us, you have the opportunity to send it in for examination and possible action. In some cases, the products need to be sent for service
+</p>
+
+<div id="accordion">
+    <div class="card">
+        <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    How much it cost to return the product?
+                </button>
+            </h5>
+        </div>
+
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+                It does not cost anything to return a product in a service case. Remember, however, that a service, inspection and shipping fee may apply if defects that do not fall within warranty or complaint law are found on the product. This can e.g. be physical injuries caused by an accident.
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    How to return a complete PC for repair?
+                </button>
+            </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body">
+                Having Problems with Your Complete PC? We are here to help you!
+
+                Contact our customer service  and see if we can remedy the error remotely, if not we will establish a service matter. If we need to bring your Complete PC in for repair, you will receive a return note sent to you. We repair the computer in our workshop in Norway and return it. Everything completely free of charge.
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingThree">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    How long does the service repair take?
+                </button>
+            </h5>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="card-body">
+                The time that a repair takes can depend on the type of product and how difficult the possible fault is to identify and rectify. As a rule, however, a repair takes about 14 days from the time the authorized service workshop received the product.
+                For complete PC repairs, it usually takes 7-14 days.
+
+                Update 2020-08-20: We currently have longer treatment times at our KPC workshop due to holidays and illness, but we are working hard to catch up. We apologize for any inconvenience.
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingFour">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    How to return a complete PC for repair?
+                </button>
+            </h5>
+        </div>
+        <div id="collapseFour" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body">
+                Different workshops are responsible for different repairs depending on the manufacturer, product or product category.
+                This is because the workshop must as a rule be authorized. You will therefore find more information about where the product is sent in connection with the creation of a return case.
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingFive">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    How to return a complete PC for repair?
+                </button>
+            </h5>
+        </div>
+        <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+            <div class="card-body">
+                Different workshops are responsible for different repairs depending on the manufacturer, product or product category.
+                This is because the workshop must as a rule be authorized. You will therefore find more information about where the product is sent in connection with the creation of a return case.
+            </div>
+        </div>
+    </div>
+</div>
 
