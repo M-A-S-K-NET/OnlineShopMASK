@@ -61,12 +61,14 @@ namespace OnlineShopMASK.WebUI.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         public ActionResult Conditions()
         {
             ViewBag.Message = "Terms & Conditions ";
             return View();
         }
 
+        [AllowAnonymous]
         public ActionResult PrivacyPolicy()
         {
             ViewBag.Message = "Privacy Policy ";
@@ -85,6 +87,8 @@ namespace OnlineShopMASK.WebUI.Controllers
             ViewBag.Message = "Return & Repair ";
             return View();
         }
+
+        [AllowAnonymous]
 
         public ActionResult FAQ()
         {
