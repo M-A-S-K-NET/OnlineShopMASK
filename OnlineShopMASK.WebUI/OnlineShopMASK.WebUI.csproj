@@ -418,7 +418,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\rating\" />
+    <Folder Include="Views\PMVM\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

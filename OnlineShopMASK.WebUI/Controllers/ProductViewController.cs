@@ -55,7 +55,81 @@ namespace OnlineShopMASK.WebUI.Controllers
             }
 
         }
+        [Authorize(Roles = "Admin")]
+        public ActionResult AddRating(string Id)
+        {
+            Product product = context.Find(Id);
+            if (product == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                ProductManagerViewModel viewModel = new ProductManagerViewModel();
+                viewModel.Product = product;
+                viewModel.ProductCategories = productCategories.Collection();
+                return View(viewModel);
+            }
+        }
+        [HttpPost]
+        public ActionResult AddRating (Product product, string Id, int Rating)
+        {
+            Product productToEdit = context.Find(Id);
+            if (productToEdit == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                if (!ModelState.IsValid)
+                {
+                    return View(product);
+                }
 
+                productToEdit.Rating = Rating;
+
+                context.Commit();
+                return RedirectToAction("Index");
+            }
+        }
+
+        [Authorize(Roles = "Admin")]
+        public ActionResult AddReview(string Id)
+        {
+            Product product = context.Find(Id);
+            if (product == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                ProductManagerViewModel viewModel = new ProductManagerViewModel();
+                viewModel.Product = product;
+                viewModel.ProductCategories = productCategories.Collection();
+                return View(viewModel);
+            }
+        }
+        [HttpPost]
+        public ActionResult AddReview(Product product, string Id, string Review)
+        {
+            Product productToEdit = context.Find(Id);
+            if (productToEdit == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                if (!ModelState.IsValid)
+                {
+                    return View(product);
+                }
+
+                productToEdit.Review = Review;
+
+                context.Commit();
+                return RedirectToAction("Index");
+            }
+        }
         public ActionResult Search(string SearchString)
         {
             var products = from p in context.Collection()

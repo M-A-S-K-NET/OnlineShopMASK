@@ -30,6 +30,18 @@
             <dd>
                 @Html.DisplayFor(model => model.Price)
             </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Rating)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Rating)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Review)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Review)
+            </dd>
 
             <dt></dt>
 
@@ -39,26 +51,28 @@
         </dl>
     </div>
 </div>
-<ajaxToolkit:Rating ID="r1" runat="server"
-                    CurrentRating="0" MaxRating="5"
-                    EmptyStarCssClass="far fa-star" FilledStarCssClass="far fa-star"
-                    StarCssClass="far fa-star" WaitingStarCssClass="fas fa-star" />
-<asp:Label ID="Label1" runat="server" />
-<input type="submit" id="Submit1" runat="server" value="Rate!" />
+
+
+<div class="form-group">
+    @Html.LabelFor(model => model.Rating, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.Rating, new { htmlAttributes = new { @class = "form-control" } })
+
+        @Html.ValidationMessageFor(model => model.Rating, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.Review, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.Review, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Review, "", new { @class = "text-danger" })
+    </div>
+</div>
+
 
 <div style="float:right">
     @Html.ActionLink("Back to List", "Index")
 </div>
 
 <div class="col-md-12 clearfix"></div>
-
-<asp:ScriptManager ID="asm" runat="server" />
-<script runat="server">
- void Page_Load()
- {
- if (Page.IsPostBack)
- {
- Label1.Text = "Your rating: " + r1.CurrentRating;
- }
- }
-</script>
