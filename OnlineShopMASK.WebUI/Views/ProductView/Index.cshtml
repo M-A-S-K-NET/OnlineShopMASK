@@ -5,6 +5,13 @@
 
 <h1>Products</h1>
 
+<form asp-controller="ProductView" asp-action="Index">
+    <p>
+        <input type="text" name="searchString">
+        <input type="submit" value="Search" />
+    </p>
+</form>
+
 <div class="row">
     <div class="col-md-2">
         <h4>Filter by Category</h4>

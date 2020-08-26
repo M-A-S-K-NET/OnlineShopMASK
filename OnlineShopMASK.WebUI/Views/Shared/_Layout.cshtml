@@ -3,11 +3,15 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/Content/Site.css" type="text/css" />
+    <script src="~/Scripts/popper.min.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
-    <link href="~/Content/font-awesome.css" rel="stylesheet" />
+
+
 </head>
 <body>
     <div class="row" style="padding-left:50px">
@@ -87,7 +91,7 @@
                                 <h4 class="card-title">Customer Service</h4>
                                 <ul style="list-style-type: none;">
                                     <li>@Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })</li>
-                                    <li>@Html.ActionLink("Warranty & Repair", "Warranty", "Home", null, new { @class = "nav-link" })</li>
+                                    <li>@Html.ActionLink("Return & Repair", "Warranty", "Home", null, new { @class = "nav-link" })</li>
                                     <li>@Html.ActionLink("FAQ", "FAQ", "Home", null, new { @class = "nav-link" })</li>
                                 </ul>
                             </div>
