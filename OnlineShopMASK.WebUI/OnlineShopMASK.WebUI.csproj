@@ -432,6 +432,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\ArticlesComments\" />
     <Folder Include="Views\PMVM\" />
   </ItemGroup>
   <ItemGroup>

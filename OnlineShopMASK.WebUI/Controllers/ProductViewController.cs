@@ -14,11 +14,13 @@ namespace OnlineShopMASK.WebUI.Controllers
         // GET: ProductView
         IRepository<Product> context;
         IRepository<ProductCategory> productCategories;
+        IRepository<ProductRating> productRating;
 
-        public ProductViewController(IRepository<Product> productContext, IRepository<ProductCategory> productCategoryContext)
+        public ProductViewController(IRepository<Product> productContext, IRepository<ProductCategory> productCategoryContext, IRepository<ProductRating> productRatingContext)
         {
             context = productContext;
             productCategories = productCategoryContext;
+            productRating = productRatingContext;
         }
         public ActionResult Index(string Category = null)
         {
@@ -72,64 +74,28 @@ namespace OnlineShopMASK.WebUI.Controllers
             }
         }
         [HttpPost]
-        public ActionResult AddRating (Product product, string Id, int Rating)
+        public ActionResult Add(FormCollection form)
         {
-            Product productToEdit = context.Find(Id);
-            if (productToEdit == null)
-            {
-                return HttpNotFound();
-            }
-            else
-            {
-                if (!ModelState.IsValid)
-                {
-                    return View(product);
-                }
+            var comment = form["Comment"].ToString();
+            var productId = form["ProductId"];
+            var rating = int.Parse(form["Rating"]);
 
-                productToEdit.Rating = Rating;
+            ProductRating productRating = new ProductRating()
+            {
+                Id = productId,
+                Comments = comment,
+                Rating = rating,
+                ThisDateTime = DateTime.Now
+            };
 
-                context.Commit();
-                return RedirectToAction("Index");
-            }
+            //productRating.Comments.Add(comment);
+            
+
+            return RedirectToAction("Details", "Articles", new { id = productId });
         }
 
 
-        public ActionResult AddReview(string Id)
-        {
-            Product product = context.Find(Id);
-            if (product == null)
-            {
-                return HttpNotFound();
-            }
-            else
-            {
-                ProductManagerViewModel viewModel = new ProductManagerViewModel();
-                viewModel.Product = product;
-                viewModel.ProductCategories = productCategories.Collection();
-                return View(viewModel);
-            }
-        }
-        [HttpPost]
-        public ActionResult AddReview(Product product, string Id, string Review)
-        {
-            Product productToEdit = context.Find(Id);
-            if (productToEdit == null)
-            {
-                return HttpNotFound();
-            }
-            else
-            {
-                if (!ModelState.IsValid)
-                {
-                    return View(product);
-                }
 
-                productToEdit.Review = Review;
-
-                context.Commit();
-                return RedirectToAction("Index");
-            }
-        }
         public ActionResult Search(string SearchString)
         {
             var products = from p in context.Collection()

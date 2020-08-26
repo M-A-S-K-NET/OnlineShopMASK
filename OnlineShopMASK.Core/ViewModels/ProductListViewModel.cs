@@ -11,7 +11,6 @@ namespace OnlineShopMASK.Core.ViewModels
     {
         public IEnumerable<Product> Products { get; set; }
         public IEnumerable<ProductCategory> ProductCategory { get; set; }
-        public IEnumerable<Rating> ProductRating { get; set; }
-        public IEnumerable<Review> ProductReview { get; set; }
+        public IEnumerable<ProductRating> ProductRating { get; set; }
     }
 }
