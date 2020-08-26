@@ -93,7 +93,7 @@ namespace OnlineShopMASK.WebUI.Controllers
             }
         }
 
-        [Authorize(Roles = "Admin")]
+
         public ActionResult AddReview(string Id)
         {
             Product product = context.Find(Id);

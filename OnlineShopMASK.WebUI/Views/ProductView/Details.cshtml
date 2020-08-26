@@ -7,6 +7,8 @@
 
 <h2>@Html.DisplayFor(model => model.Name)</h2>
 
+
+
 <div class="container">
     <div class="col-md-2">
         <img class="img-responsive" src="~/Content/ProductImages/@Model.Image" />
@@ -30,9 +32,9 @@
             <dd>
                 @Html.DisplayFor(model => model.Price)
             </dd>
-            <dt>
+            <th>
                 @Html.DisplayNameFor(model => model.Rating)
-            </dt>
+            </th>
             <dd>
                 @Html.DisplayFor(model => model.Rating)
             </dd>
@@ -52,9 +54,12 @@
     </div>
 </div>
 
+<div class="fab fa-facebook">
+    helllllllllllllo
+</div>
 
 <div class="form-group">
-    @Html.LabelFor(model => model.Rating, htmlAttributes: new { @class = "control-label col-md-2" })
+    @Html.LabelFor(model => model.Rating, htmlAttributes: new { @class = "fab fa-facebook col-md-2" })
     <div class="col-md-10">
         @Html.EditorFor(model => model.Rating, new { htmlAttributes = new { @class = "form-control" } })
 
@@ -65,7 +70,7 @@
 <div class="form-group">
     @Html.LabelFor(model => model.Review, htmlAttributes: new { @class = "control-label col-md-2" })
     <div class="col-md-10">
-        @Html.EditorFor(model => model.Review, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.TextAreaFor(model => model.Review, new { htmlAttributes = new { @class = "form-control" } })
         @Html.ValidationMessageFor(model => model.Review, "", new { @class = "text-danger" })
     </div>
 </div>
