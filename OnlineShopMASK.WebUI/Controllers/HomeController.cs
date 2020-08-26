@@ -56,7 +56,7 @@ namespace OnlineShopMASK.WebUI.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Contact Information";
+            ViewBag.Message = "What can we help with you?";
             return View();
         }
 

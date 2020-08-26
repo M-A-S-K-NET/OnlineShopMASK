@@ -1,29 +1,196 @@
 ﻿@{
     ViewBag.Title = "Customer Service";
 }
+
+<script src="~/Scripts/bootstrap.js"></script>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
 <div class="row">
-    <div class="col-md-3">
+    <div class="col-xs-12 col-md-4 " style="padding:20px">
         <a href="#">
             <img class="" alt="Shipping and delivery" title="Shipping and delivery" src="~/Content/ProductImages/Shipping.png">
-        </a>  
+        </a>
+    </div>
+
+    <div class="col-xs-12 col-md-4 " style="padding:20px">
+        <a href="#">
+            <img class="" alt="Shipping and delivery" title="Shipping and delivery" src="~/Content/ProductImages/Open Purchase.png">
+        </a>
+    </div>
+
+    <div class="col-xs-12 col-md-4" style="padding:20px">
+        <a href="#">
+            <img class="" alt="Shipping and delivery" title="Shipping and delivery" src="~/Content/ProductImages/Warranty.png">
+        </a>
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col-xs-12 col-sm-12">
+        <div class="rich-text-editor">
+            <p style="font-size: 3px;"><br><br></p>
+        </div>
     </div>
 </div>
 
-<Phone>
-    6752365473
-</Phone>
+<div class="row">
+    <div class="col-xs-12 col-sm-12">
+        <div class="rich-text-editor">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12">
+                    <div class="rich-text-editor">
+                        <h3 style="text-align: center;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">FAQ - frequently asked questions:</font></font></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+<div class="accordion" id="accordionExample">
+    <div class="card">
+        <div class="card-header" id="headingOne">
+            <h2 class="mb-0">
+                <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Shipping &amp; delivery
+                </button>
+            </h2>
+        </div>
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+                <a href="~/Views/Shipping.html">When will i receive my order?</a><br />
+                <a href="~/Views/TrackPackage.html">How do I track my package?</a>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingTwo">
+            <h2 class="mb-0">
+                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Open purchase/right of withdrawal
+                </button>
+            </h2>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="card-body">
+                <a href="~/Views/Shipping.html">How do i return a product on an open purchase or right of withdrawl?</a><br />
+                <a href="~/Views/TrackPackage.html">How much does it cost to return a product?</a><br />
+                <a href="~/Views/TrackPackage.html">Important to keep in mind when buying openly</a><br />
+                <a href="~/Views/TrackPackage.html">exceptions from open purchase &amp; right of withdrawal</a>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingThree">
+            <h2 class="mb-0">
+                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Warranty &amp; complaint
+                </button>
+            </h2>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+            <div class="card-body">
+                <a href="~/Views/Shipping.html">How do i return a product for warranty or complaint?</a><br />
+                <a href="~/Views/TrackPackage.html">How much does it cost to return a product?</a><br />
+                <a href="~/Views/TrackPackage.html">How to return a complete PC for repair?</a><br />
+                <a href="~/Views/TrackPackage.html">How long does a service repair take? </a><br />
+                <a href="~/Views/TrackPackage.html">Who's repairing my product? </a><br />
+                <a href="~/Views/TrackPackage.html">What about pixel errors on screens? </a><br />
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingFour">
+            <h2 class="mb-0">
+                <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseOne">
+                    Payment
+                </button>
+            </h2>
+        </div>
+
+        <div id="collapseFour" class="collapse show" aria-labelledby="headingFour" data-parent="#accordionExample">
+            <div class="card-body">
+                <a href="~/Views/Shipping.html">I'm missing my invoice,where can i find it?</a><br />
+                <a href="~/Views/TrackPackage.html">How do I track my package?</a>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingFive">
+            <h2 class="mb-0">
+                <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseOne">
+                    Price match
+                </button>
+            </h2>
+        </div>
+
+        <div id="collapseFive" class="collapse show" aria-labelledby="headingFive" data-parent="#accordionExample">
+            <div class="card-body">
+                <p>We at Komplett take good prices seriously. That is why we are launching "Prismatch", so that you as a customer can always be sure that you are making a good purchase with us. If you find a product at a lower normal price with our competitors, we make sure to match the price at the time of purchase. All you need to do is document that you have found an identical product at a lower price that is in stock at another store before you shop from us.</p>
+                <p>There are some exceptions from our Price Match, see below. The price matching only applies to competitors who are registered in Sweden and their regular prices. Price match therefore does not include products that are on sale or discounted at our competitor, as in these scenarios:</p>
+                <p>
+                    <ul>
+                        <li>Seasonal campaigns e.g. Black Week / Green Weekend, Midday sale</li>
+                        <li>Geographically specific price offers</li>
+                        <li>Discounted price linked to a physical store</li>
+                        <li>Party purchase</li>
+                        <li>Offers valid for a "limited number"</li>
+                        <li>Customer club offer / Member offer</li>
+                        <li>Opening offer</li>
+                        <li>Local stock depletion</li>
+                        <li>Local readagar</li>
+                    </ul>
+
+
+                <p>Products to be priced must be in stock at the competitor. To get a price match, you must contact our customer service at the time of purchase, either by phone, email or chat, with the competitor's price documented. We will then put the discounted product in your shopping cart and you can then complete the purchase as usual. We do not price match after the purchase is completed.</p>
+                <p>Komplett launches Prismatch at the time of purchase from 2020-06-16 at 10. The previous customer promise "Price promise", where you received a gift card if you found an identical product at a competitor at a lower price within 60 days, is thus removed at the same time.</p>
+                <p> Why are we changing the customer promise?</p>
+                <p>We believe that it will be both easier and better for our customers with an immediate price reduction at the time of purchase than getting a gift card.</p>
+                <p>"Price match" as a process also becomes easier and more efficient for Komplett to administer. In this way, we can put our energy into ensuring that we offer our customers the lowest prices on the market.</p>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingSix">
+            <h2 class="mb-0">
+                <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseOne">
+                    Privacy Policy &amp; Complaints Opportunities
+                </button>
+            </h2>
+        </div>
+
+        <div id="collapseSix" class="collapse show" aria-labelledby="headingSix" data-parent="#accordionExample">
+            <div class="card-body">
+                <a href="~/Views/Shipping.html">Privacy Policy</a><br />
+                <a href="~/Views/TrackPackage.html">Opportunities for complaints</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+@*<Phone>
+        6752365473
+    </Phone>
+
+    <address>
+        One Microsoft Way<br />
+        Redmond, WA 98052-6399<br />
+        <abbr title="Phone">P:</abbr>
+        425.555.0100
+    </address>
+
+    <address>
+        <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+        <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+    </address>*@

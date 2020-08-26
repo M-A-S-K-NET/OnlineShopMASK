@@ -4,10 +4,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="~/Content/Site.css" type="text/css" />
+    <script src="~/Scripts/popper.min.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    @*@Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/popper")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)*@
+
 </head>
 <body>
     <div class="row" style="padding-left:50px">
@@ -39,9 +45,9 @@
 
                     @if (User.Identity.IsAuthenticated)
 
-                    {
-                        if (User.IsInRole("Admin"))
-                        {
+    {
+        if (User.IsInRole("Admin"))
+        {
                             <li class="nav-item">@Html.ActionLink("Manage Role", "Index", "Role", null, new { @class = "nav-link" })</li>
                         }
                         if (User.IsInRole("Admin") || User.IsInRole("Supplier"))
