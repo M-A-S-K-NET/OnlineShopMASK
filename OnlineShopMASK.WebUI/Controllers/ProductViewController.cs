@@ -21,11 +21,11 @@ namespace OnlineShopMASK.WebUI.Controllers
             context = productContext;
             productCategories = productCategoryContext;
         }
-        public ActionResult Index(string Category,string SearchString)
+        public ActionResult Index(string SearchString, string Category = null)
         {
             List<Product> products;
             List<ProductCategory> categories = productCategories.Collection().ToList();
-            Category = null;
+           
             if (Category == null)
             {
                 products = context.Collection().ToList();
