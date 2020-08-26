@@ -32,7 +32,9 @@
 
             <dt></dt>
 
-            <dd> <a href="#" class="btn btn-primary"> Add to cart</a></dd>
+            <dd>
+                <a href="@Url.Action("AddToBasket", "Basket", new { Id=Model.Id})" class="btn btn-primary">Add to Basket</a>
+            </dd>
             <dd> <a href="#" class="btn btn-primary"> Add to WishList</a></dd>
 
         </dl>

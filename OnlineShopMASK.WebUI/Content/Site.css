@@ -25,12 +25,13 @@ textarea {
     background-color:grey;
     padding:10px;
 }
-.card {
+/*.card {
     border:double;
     
     padding:5px;
-}
+}*/
 /*caurosel*/
+
 
 .carousel-inner {
     width: 100%;

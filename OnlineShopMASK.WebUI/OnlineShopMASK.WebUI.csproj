@@ -235,9 +235,10 @@
     <Content Include="Content\ProductImages\Challenger-Asus-Promotion-2.jpg" />
     <Content Include="Content\ProductImages\f2f3ed2d-e647-4bc8-ab1c-f825f3230f6a.jpg" />
     <Content Include="Content\ProductImages\c9e75c57-9779-4e81-acef-be8cfe38d5be.jpg" />
+    <Content Include="Content\ProductImages\masklogo.png" />
+    <Content Include="Content\ProductImages\sale-laptop.jpg" />
     <Content Include="Content\ProductImages\sale-mobile.jpg" />
     <Content Include="Content\ProductImages\sale-tablet.jpg" />
-    <Content Include="Content\ProductImages\samsung ad.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
