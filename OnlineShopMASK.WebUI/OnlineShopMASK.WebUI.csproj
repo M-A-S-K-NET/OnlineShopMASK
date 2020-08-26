@@ -204,12 +204,18 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductManagerController.cs" />
+    <Compile Include="Controllers\ProductRatingController.cs" />
     <Compile Include="Controllers\ProductViewController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\usersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008261441554_RatingSystem.cs" />
+    <Compile Include="Migrations\202008261441554_RatingSystem.Designer.cs">
+      <DependentUpon>202008261441554_RatingSystem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -236,6 +242,7 @@
     <Content Include="Content\ProductImages\Best.png" />
     <Content Include="Content\ProductImages\f2f3ed2d-e647-4bc8-ab1c-f825f3230f6a.jpg" />
     <Content Include="Content\ProductImages\c9e75c57-9779-4e81-acef-be8cfe38d5be.jpg" />
+    <Content Include="Content\Stie.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
@@ -429,11 +436,12 @@
     <Content Include="webfonts\fa-solid-900.ttf" />
     <Content Include="webfonts\fa-solid-900.woff" />
     <Content Include="webfonts\fa-solid-900.woff2" />
+    <Content Include="Views\Shared\_CommentBox.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\ArticlesComments\" />
-    <Folder Include="Views\PMVM\" />
+    <Folder Include="Views\ProductRating\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -459,6 +467,11 @@
       <Project>{65CA21A0-C47B-4D9F-9761-749568E63229}</Project>
       <Name>OnlineShopMASK.Services</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202008261441554_RatingSystem.resx">
+      <DependentUpon>202008261441554_RatingSystem.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

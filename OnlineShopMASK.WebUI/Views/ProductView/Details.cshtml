@@ -1,49 +1,63 @@
 ﻿@model OnlineShopMASK.Core.Models.Product
-
 @{
-    ViewBag.Title = Model.Name + "Details";
+    // ViewBag.Title = Model.;
+    var comments = (IEnumerable<OnlineShopMASK.Core.Models.ProductRating>)ViewBag.Comments;
+    var ratingSum = ViewBag.RatingSum;
+    var ratingCount = ViewBag.RatingCount;
+
+    decimal rating = 0;
+    if (ratingCount > 0)
+    {
+        rating = (ratingSum / ratingCount);
+    }
+    var totalRating = decimal.Parse(rating.ToString());
 }
 
 
-<h2>@Html.DisplayFor(model => model.Name)</h2>
+    <h2>@Html.DisplayFor(model => model.Name)</h2>
+
+
+<div>
+    <span class="starFadeN" id="sRate1"></span><span class="starFadeN" id="sRate2"></span><span class="starFadeN" id="sRate3"></span><span class="starFadeN" id="sRate4"></span><span class="starFadeN" id="sRate5"></span>
+</div>
 
 
 
 <div class="container">
     <div class="col-md-2">
-        <img class="img-responsive" src="~/Content/ProductImages/@Model.Image" />
+
+            <img class="img-responsive" src="~/Content/ProductImages/@Model.Image" />
+
     </div>
 
     <div class="col-md-10">
         <dl class="dl-horizontal col-md-10">
-            <dt>
-                @Html.DisplayNameFor(model => model.Description)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Description)
-            </dd>
 
 
-            <dt>
-                @Html.DisplayNameFor(model => model.Price)
-            </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Description)
+                </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.Price)
-            </dd>
-            <th>
-                @Html.DisplayNameFor(model => model.Rating)
-            </th>
-            <dd>
-                @Html.DisplayFor(model => model.Rating)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.Review)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.Review)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Description)
+                </dd>
+
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Price)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Price)
+                </dd>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductRating)
+                </th>
+                <dd>
+                    @Html.DisplayFor(model => model.ProductRating)
+                </dd>
+                
+
 
             <dt></dt>
 
@@ -54,30 +68,40 @@
     </div>
 </div>
 
-<div class="fab fa-facebook">
-    helllllllllllllo
-</div>
+@foreach (var c in comments)
+{
+    <hr />
 
-<div class="form-group">
-    @Html.LabelFor(model => model.Rating, htmlAttributes: new { @class = "fab fa-facebook col-md-2" })
-    <div class="col-md-10">
-        @Html.EditorFor(model => model.Rating, new { htmlAttributes = new { @class = "form-control" } })
+    <div class="row">
+        <div class="col-md-3">
+            <i></i>
+            <br />
+            @for (var i = 1; i <= c.Rating; i++)
+            {
+                <span class="starGlowN"></span>
+            }
+            @for (var i = (c.Rating + 1); i <= 5; i++)
+            {
+                <span class="starFadeN"></span>
+            }
+        </div>
+        <div class="col-md-9">
+            @Html.Raw(c.Comments.Replace("\n", "<br />"))
 
-        @Html.ValidationMessageFor(model => model.Rating, "", new { @class = "text-danger" })
+
+        </div>
     </div>
-</div>
+}
+<hr />
+@Html.Partial("_CommentBox")
 
-<div class="form-group">
-    @Html.LabelFor(model => model.Review, htmlAttributes: new { @class = "control-label col-md-2" })
-    <div class="col-md-10">
-        @Html.TextAreaFor(model => model.Review, new { htmlAttributes = new { @class = "form-control" } })
-        @Html.ValidationMessageFor(model => model.Review, "", new { @class = "text-danger" })
-    </div>
-</div>
-
-
-<div style="float:right">
-    @Html.ActionLink("Back to List", "Index")
-</div>
-
-<div class="col-md-12 clearfix"></div>
+<script>
+    function SCRate() {
+        for (var i = 1; i <= @totalRating; i++) {
+            $("#sRate" + i).attr('class', 'starGlowN');
+        }
+    }
+    $(function(){
+        SCRate();
+    });
+</script>
