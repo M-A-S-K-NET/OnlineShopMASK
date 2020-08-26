@@ -34,6 +34,7 @@ namespace OnlineShopMASK.Services
                 if (!string.IsNullOrEmpty(basketId))
                 {
                     basket = basketContext.Find(basketId);
+                    
                 }
                 else
                 {
@@ -91,12 +92,17 @@ namespace OnlineShopMASK.Services
         {
             Basket basket = GetBasket(httpContext, true);
             BasketItem item = basket.BasketItems.FirstOrDefault(i => i.Id == itemId);
-
-            if (item != null)
+            if(item.Quantity > 1 )
             {
-                basket.BasketItems.Remove(item);
-                basketContext.Commit();
+                item.Quantity = item.Quantity - 1;
             }
+            else
+            { 
+                basket.BasketItems.Remove(item);
+                
+                
+            }
+            basketContext.Commit();
         }
         public List<BasketItemViewModel> GetBasketItems(HttpContextBase httpContext)
         {
