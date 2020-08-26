@@ -207,6 +207,7 @@
     <Compile Include="Controllers\ProductViewController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\usersController.cs" />
+    <Compile Include="Controllers\WishListController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -408,6 +409,7 @@
     <Content Include="Views\users\Index.cshtml" />
     <Content Include="Views\Role\Index.cshtml" />
     <Content Include="Views\Role\Create.cshtml" />
+    <Content Include="Views\WishList\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
