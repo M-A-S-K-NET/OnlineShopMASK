@@ -56,6 +56,8 @@ namespace OnlineShopMASK.WebUI
             container.RegisterType<IRepository<Order>, SqlRepository<Order>>();
             container.RegisterType<IBasketService, BasketService>();
             container.RegisterType<IOrderService, OrderService>();
+            container.RegisterType<IRepository<ProductRating>, SqlRepository<ProductRating>>();
+
             // Login user
             container.RegisterType<AccountController>(new InjectionConstructor());
         }

@@ -1,32 +1,87 @@
 ﻿@model OnlineShopMASK.Core.Models.Product
-
 @{
-    ViewBag.Title = Model.Name + "Details";
+    // ViewBag.Title = Model.;
+    var comments = (IEnumerable<OnlineShopMASK.Core.Models.Product>)ViewBag.comment;
+    var ratingSum = ViewBag.RatingSum;
+    var ratingCount = ViewBag.RatingCount;
+
+    decimal rating = 0;
+    if (ratingCount > 0)
+    {
+        rating = (ratingSum / ratingCount);
+    }
+    var totalRating = decimal.Parse(rating.ToString());
 }
 
-<div class="card mb-3 container-fluid border-0" style="max-width:inherit;">
 
-    <div class="row no-gutters">
-        <div class="col-md-8">
-            <img src="~/Content/ProductImages/@Model.Image" class="card-img" alt="today special image" height="420px;">
-        </div>
-        <div class="col-md-4">
-            <div class="card-body">
-                <h4 class="card-title"> @Html.DisplayFor(model => model.Name)</h4>
-                <h5> @Html.DisplayNameFor(model => model.Description)</h5>
-                <p class="card-text">
-                    @Html.DisplayFor(model => model.Description)
-                </p>
-                <b>Price:  @Html.DisplayFor(model => model.Price)</b>
-                <hr />
-                <a href="@Url.Action("AddToBasket", "Basket", new { Id=Model.Id})" class="btn btn-outline-primary float-right">Add to Basket</a>
-                <a href="#" class="btn btn-outline-danger float-left"> Add to WishList</a>
+<h2>@Html.DisplayFor(model => model.Name)</h2>
 
-            </div>
-        </div>
+
+<div>
+    <span class="starFadeN" id="sRate1"></span><span class="starFadeN" id="sRate2"></span><span class="starFadeN" id="sRate3"></span><span class="starFadeN" id="sRate4"></span><span class="starFadeN" id="sRate5"></span>
+</div>
+
+
+
+<div class="container">
+    <div class="col-md-2">
+
+        <img class="img-responsive" src="~/Content/ProductImages/@Model.Image" />
+
+    </div>
+
+    <div class="col-md-10">
+        <dl class="dl-horizontal col-md-10">
+
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+            <th>
+                @Html.DisplayNameFor(model => model.Rating)
+            </th>
+            <dd>
+                @Html.DisplayFor(model => model.Rating)
+            </dd>
+            <th>
+                @Html.DisplayNameFor(model => model.Comment)
+            </th>
+            <dd>
+                @Html.DisplayFor(model => model.Comment)
+            </dd>
+
+
+            <dt></dt>
+
+            <dd> <a href="#" class="btn btn-primary"> Add to cart</a></dd>
+            <dd> <a href="#" class="btn btn-primary"> Add to WishList</a></dd>
+
+        </dl>
     </div>
 </div>
-<div class="mb-2">
-    <a href="@Url.Action("Index", "ProductView")" class="btn btn-outline-dark"> Back to List</a>
-</div>
-<div class="col-md-12 clearfix"></div>
+
+@Html.Partial("_CommentBox")
+
+<script>
+    function SCRate() {
+        for (var i = 1; i <= @totalRating; i++) {
+            $("#sRate" + i).attr('class', 'starGlowN');
+        }
+    }
+    $(function(){
+        SCRate();
+    });
+</script>

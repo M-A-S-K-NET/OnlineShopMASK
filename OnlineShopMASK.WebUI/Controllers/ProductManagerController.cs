@@ -16,11 +16,13 @@ namespace OnlineShopMASK.WebUI.Controllers
     {
         IRepository<Product> context;
         IRepository<ProductCategory> productCategories;
-
-        public ProductManagerController(IRepository<Product> productContext, IRepository<ProductCategory> productCategoryContext)
+        IRepository<ProductRating> productRating;
+        public ProductManagerController(IRepository<Product> productContext, IRepository<ProductCategory> productCategoryContext, 
+            IRepository<ProductRating> productRatingContext)
         {
             context = productContext;
             productCategories = productCategoryContext;
+            productRating = productRatingContext;
         }
 
         // GET: ProductManager
@@ -36,6 +38,7 @@ namespace OnlineShopMASK.WebUI.Controllers
             ProductManagerViewModel viewModel = new ProductManagerViewModel();
             viewModel.Product = new Product();
             viewModel.ProductCategories = productCategories.Collection();
+            viewModel.ProductRating = productRating.Collection();
             return View(viewModel);
         }
         [HttpPost]

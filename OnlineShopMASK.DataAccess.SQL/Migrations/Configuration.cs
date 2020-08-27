@@ -48,12 +48,45 @@ namespace OnlineShopMASK.DataAccess.SQL.Migrations
                     context.productCategories.AddRange(categories);
                     context.SaveChanges();
                 }
+                if (!context.ProductRating.Any())
+                {
+                    var ratings = new List<ProductRating>
+                    {
+                        new ProductRating
+                        {
+                            Comments= "something something something",
+                            Id= Guid.NewGuid().ToString(),
+                            ThisDateTime= DateTime.Now,
+                            Rating= 4
+                        },
+                       new ProductRating
+                       {
+                           Comments = "something something something.. but something something and something somehting ",
+                           Id = Guid.NewGuid().ToString(),
+                           ThisDateTime = DateTime.Now,
+                           Rating = 3,
+                        },
+                        new ProductRating
+                        {
+                           Comments = "nothing nothing nothing",
+                           Id = Guid.NewGuid().ToString(),
+                           ThisDateTime = DateTime.Now,
+                           Rating = 5,
+                        },
+                    };
+                    context.ProductRating.AddRange(ratings);
+                    context.SaveChanges();
+                }
 
                 if (!context.products.Any())
                 {
                     var cat_Laptop = context.productCategories.FirstOrDefault(x => x.Category.Equals("Laptop")).Category;
                     var cat_tablet = context.productCategories.FirstOrDefault(x=>x.Category.Equals("Tablets")).Category;
                     var cat_Mobile = context.productCategories.FirstOrDefault(x => x.Category.Equals("Mobiles")).Category;
+                    var rating = context.ProductRating.FirstOrDefault().Rating;
+                    var comment = context.ProductRating.FirstOrDefault().Comments;
+                    var rating1 = context.ProductRating.FirstOrDefault().Rating;
+                    var comment1 = context.ProductRating.FirstOrDefault().Comments;
                     var pro = new List<Product>
                     {
                         // LAPTOPS
@@ -65,7 +98,9 @@ namespace OnlineShopMASK.DataAccess.SQL.Migrations
                             Category=cat_Laptop,
                             Image="28ede8f9-569d-4486-915c-cfe64a579042.jpg",
                             Id="28ede8f9-569d-4486-915c-cfe64a579042",
-                            CreatedAt= DateTime.Now
+                            CreatedAt= DateTime.Now,
+                            Rating=rating,
+                            Comment=comment
                         },
                          new Product
                         {
@@ -75,7 +110,9 @@ namespace OnlineShopMASK.DataAccess.SQL.Migrations
                             Category=cat_Laptop,
                             Image="11cbf337-e361-4ec9-a58d-3b336c442a30.jpg",
                             Id="11cbf337-e361-4ec9-a58d-3b336c442a30",
-                            CreatedAt= DateTime.Now
+                            CreatedAt= DateTime.Now,
+                            Rating=rating1,
+                            Comment=comment1
                         },
                           new Product
                         {
@@ -85,7 +122,9 @@ namespace OnlineShopMASK.DataAccess.SQL.Migrations
                             Category=cat_Laptop,
                             Image = "89e65120-7d47-4377-8d7f-28d4677e8fcd.jfif",
                             Id= "89e65120-7d47-4377-8d7f-28d4677e8fcd",
-                            CreatedAt= DateTime.Now
+                            CreatedAt= DateTime.Now,
+                            Rating=rating,
+                            Comment=comment
                         },
                           //TABLETS
                         new Product
@@ -96,7 +135,9 @@ namespace OnlineShopMASK.DataAccess.SQL.Migrations
                             Category=cat_tablet,
                             Image = "bc0104cd-2bd9-4980-bf9a-1a44a01538d4.jfif",
                             Id= "bc0104cd-2bd9-4980-bf9a-1a44a01538d4",
-                            CreatedAt= DateTime.Now
+                            CreatedAt= DateTime.Now,
+                            Rating=rating,
+                            Comment=comment
                         },
                            new Product
                         {
@@ -106,7 +147,9 @@ namespace OnlineShopMASK.DataAccess.SQL.Migrations
                             Category=cat_tablet,
                             Image = "603f9174-1697-454a-b39d-ebe1d6829c28.jpg",
                             Id= "603f9174-1697-454a-b39d-ebe1d6829c28",
-                            CreatedAt= DateTime.Now
+                            CreatedAt= DateTime.Now,
+                            Rating=rating1,
+                            Comment=comment1
                         },
                            new Product
                         {
@@ -116,7 +159,9 @@ namespace OnlineShopMASK.DataAccess.SQL.Migrations
                             Category=cat_tablet,
                             Image = "a20e5ba5-a979-4e2e-9825-246f19711686.jfif",
                             Id= "a20e5ba5-a979-4e2e-9825-246f19711686",
-                            CreatedAt= DateTime.Now
+                            CreatedAt= DateTime.Now,
+                            Rating=rating1,
+                            Comment=comment1
                         },
                            //MOBILES
                            new Product
@@ -127,7 +172,9 @@ namespace OnlineShopMASK.DataAccess.SQL.Migrations
                             Category=cat_Mobile,
                             Image = "c9e75c57-9779-4e81-acef-be8cfe38d5be.jpg",
                             Id= "c9e75c57-9779-4e81-acef-be8cfe38d5be",
-                            CreatedAt= DateTime.Now
+                            CreatedAt= DateTime.Now,
+                            Rating=rating1,
+                            Comment=comment1
                         },
                             new Product
                         {
@@ -137,7 +184,9 @@ namespace OnlineShopMASK.DataAccess.SQL.Migrations
                             Category=cat_Mobile,
                             Image = "f2f3ed2d-e647-4bc8-ab1c-f825f3230f6a.jpg",
                             Id= "f2f3ed2d-e647-4bc8-ab1c-f825f3230f6a",
-                            CreatedAt= DateTime.Now
+                            CreatedAt= DateTime.Now,
+                            Rating=rating,
+                            Comment=comment
                         },
                              new Product
                         {
@@ -147,7 +196,9 @@ namespace OnlineShopMASK.DataAccess.SQL.Migrations
                             Category=cat_Mobile,
                             Image = "739bbafd-487a-484b-93fd-6d567c8358a6.jpg",
                             Id= "739bbafd-487a-484b-93fd-6d567c8358a6",
-                            CreatedAt= DateTime.Now
+                            CreatedAt= DateTime.Now,
+                            Rating=rating1,
+                            Comment=comment1
                         },
 
 
