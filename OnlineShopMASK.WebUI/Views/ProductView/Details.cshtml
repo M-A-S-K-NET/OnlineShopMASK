@@ -1,7 +1,16 @@
 ﻿@model OnlineShopMASK.Core.Models.Product
-
 @{
-    ViewBag.Title = Model.Name + "Details";
+    // ViewBag.Title = Model.;
+    var comments = (IEnumerable<OnlineShopMASK.Core.Models.Product>)ViewBag.comment;
+    var ratingSum = ViewBag.RatingSum;
+    var ratingCount = ViewBag.RatingCount;
+
+    decimal rating = 0;
+    if (ratingCount > 0)
+    {
+        rating = (ratingSum / ratingCount);
+    }
+    var totalRating = decimal.Parse(rating.ToString());
 }
 
 <div class="card mb-3 container-fluid border-0" style="max-width:inherit;">
@@ -26,6 +35,19 @@
         </div>
     </div>
 </div>
+
+@Html.Partial("_CommentBox")
+
+<script>
+    function SCRate() {
+        for (var i = 1; i <= @totalRating; i++) {
+            $("#sRate" + i).attr('class', 'starGlowN');
+        }
+    }
+    $(function(){
+        SCRate();
+    });
+</script>
 <div class="mb-2">
     <a href="@Url.Action("Index", "ProductView")" class="btn btn-outline-dark"> Back to List</a>
 </div>

@@ -59,6 +59,8 @@ namespace OnlineShopMASK.WebUI
             container.RegisterType<IRepository<WishList>, SqlRepository<WishList>>();
             container.RegisterType<IRepository<WishListItem>, SqlRepository<WishListItem>>();
             container.RegisterType<IWishListService, WishListService>();
+            container.RegisterType<IRepository<ProductRating>, SqlRepository<ProductRating>>();
+
             // Login user
             container.RegisterType<AccountController>(new InjectionConstructor());
         }

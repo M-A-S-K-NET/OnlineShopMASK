@@ -25,6 +25,6 @@ namespace OnlineShopMASK.DataAccess.SQL
         public DbSet<Customer> Customers { get; set; }
         //Add those models to Entity Framework... And when you done with that add a new migration...
         public DbSet<Order> Orders { get; set; }
-        public DbSet<OrderItem> OrderItems { get; set; }
+        public DbSet<ProductRating> ProductRating { get; set; }
     }
 }

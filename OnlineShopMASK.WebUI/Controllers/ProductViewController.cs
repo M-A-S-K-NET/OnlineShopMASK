@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Diagnostics;
 
 namespace OnlineShopMASK.WebUI.Controllers
 {
@@ -15,11 +16,13 @@ namespace OnlineShopMASK.WebUI.Controllers
         // GET: ProductView
         IRepository<Product> context;
         IRepository<ProductCategory> productCategories;
+        IRepository<ProductRating> productRating;
 
-        public ProductViewController(IRepository<Product> productContext, IRepository<ProductCategory> productCategoryContext)
+        public ProductViewController(IRepository<Product> productContext, IRepository<ProductCategory> productCategoryContext, IRepository<ProductRating> productRatingContext)
         {
             context = productContext;
             productCategories = productCategoryContext;
+            productRating = productRatingContext;
         }
         public ActionResult Index(string SearchString, string Category = null)
         {
@@ -51,6 +54,7 @@ namespace OnlineShopMASK.WebUI.Controllers
         public ActionResult Details(string id)
         {
             Product product = context.Find(id);
+            Debug.WriteLine("HHHHHHHHHHHHHHHH");
             if (product == null)
             {
                 return HttpNotFound();
@@ -62,6 +66,43 @@ namespace OnlineShopMASK.WebUI.Controllers
             }
 
         }
+        public ActionResult AddRating(string Id)
+        {
+            Product product = context.Find(Id);
+            if (product == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                ProductManagerViewModel viewModel = new ProductManagerViewModel();
+                viewModel.Product = product;
+                viewModel.ProductCategories = productCategories.Collection();
+                return View(viewModel);
+            }
+        }
+        [HttpPost]
+        public ActionResult Add(FormCollection form)
+        {
+            var comment = form["Comment"].ToString();
+            var productId = form["ProductId"];
+            var rating = int.Parse(form["Rating"]);
+
+            ProductRating productRating = new ProductRating()
+            {
+                Id = productId,
+                Comments = comment,
+                Rating = rating,
+                ThisDateTime = DateTime.Now
+            };
+
+            //productRating.Comments.Add(comment);
+            
+
+            return RedirectToAction("Details", "Articles", new { id = productId });
+        }
+
+
 
         public ActionResult Search(string SearchString)
         {

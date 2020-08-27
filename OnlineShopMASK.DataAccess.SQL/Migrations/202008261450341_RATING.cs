@@ -3,7 +3,7 @@ namespace OnlineShopMASK.DataAccess.SQL.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AddBasket : DbMigration
+    public partial class RATING : DbMigration
     {
         public override void Up()
         {
@@ -81,6 +81,43 @@ namespace OnlineShopMASK.DataAccess.SQL.Migrations
                 .ForeignKey("dbo.Orders", t => t.OrderId)
                 .Index(t => t.OrderId);
             
+            CreateTable(
+                "dbo.ProductCategories",
+                c => new
+                    {
+                        Id = c.String(nullable: false, maxLength: 128),
+                        Category = c.String(),
+                        CreatedAt = c.DateTimeOffset(nullable: false, precision: 7),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.ProductRatings",
+                c => new
+                    {
+                        Id = c.String(nullable: false, maxLength: 128),
+                        Comments = c.String(),
+                        ThisDateTime = c.DateTime(),
+                        Rating = c.Int(),
+                        CreatedAt = c.DateTimeOffset(nullable: false, precision: 7),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.Products",
+                c => new
+                    {
+                        Id = c.String(nullable: false, maxLength: 128),
+                        Name = c.String(),
+                        Description = c.String(),
+                        Price = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        Category = c.String(),
+                        Image = c.String(),
+                        ProductRating = c.Int(nullable: false),
+                        CreatedAt = c.DateTimeOffset(nullable: false, precision: 7),
+                    })
+                .PrimaryKey(t => t.Id);
+            
         }
         
         public override void Down()
@@ -89,6 +126,9 @@ namespace OnlineShopMASK.DataAccess.SQL.Migrations
             DropForeignKey("dbo.BasketItems", "BasketId", "dbo.Baskets");
             DropIndex("dbo.OrderItems", new[] { "OrderId" });
             DropIndex("dbo.BasketItems", new[] { "BasketId" });
+            DropTable("dbo.Products");
+            DropTable("dbo.ProductRatings");
+            DropTable("dbo.ProductCategories");
             DropTable("dbo.OrderItems");
             DropTable("dbo.Orders");
             DropTable("dbo.Customers");
