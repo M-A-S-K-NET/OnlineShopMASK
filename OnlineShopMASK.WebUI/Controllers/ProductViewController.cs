@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Diagnostics;
 
 namespace OnlineShopMASK.WebUI.Controllers
 {
@@ -46,6 +47,7 @@ namespace OnlineShopMASK.WebUI.Controllers
         public ActionResult Details(string id)
         {
             Product product = context.Find(id);
+            Debug.WriteLine("HHHHHHHHHHHHHHHH");
             if (product == null)
             {
                 return HttpNotFound();
@@ -57,7 +59,6 @@ namespace OnlineShopMASK.WebUI.Controllers
             }
 
         }
-        [Authorize(Roles = "Admin")]
         public ActionResult AddRating(string Id)
         {
             Product product = context.Find(Id);
