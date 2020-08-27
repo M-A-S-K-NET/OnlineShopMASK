@@ -3,7 +3,7 @@ namespace OnlineShopMASK.DataAccess.SQL.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class RATING : DbMigration
+    public partial class rating : DbMigration
     {
         public override void Up()
         {
@@ -113,17 +113,21 @@ namespace OnlineShopMASK.DataAccess.SQL.Migrations
                         Price = c.Decimal(nullable: false, precision: 18, scale: 2),
                         Category = c.String(),
                         Image = c.String(),
-                        ProductRating = c.Int(nullable: false),
                         CreatedAt = c.DateTimeOffset(nullable: false, precision: 7),
+                        Review_Id = c.String(maxLength: 128),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.ProductRatings", t => t.Review_Id)
+                .Index(t => t.Review_Id);
             
         }
         
         public override void Down()
         {
+            DropForeignKey("dbo.Products", "Review_Id", "dbo.ProductRatings");
             DropForeignKey("dbo.OrderItems", "OrderId", "dbo.Orders");
             DropForeignKey("dbo.BasketItems", "BasketId", "dbo.Baskets");
+            DropIndex("dbo.Products", new[] { "Review_Id" });
             DropIndex("dbo.OrderItems", new[] { "OrderId" });
             DropIndex("dbo.BasketItems", new[] { "BasketId" });
             DropTable("dbo.Products");

@@ -51,9 +51,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataContext.cs" />
-    <Compile Include="Migrations\202008261450341_RATING.cs" />
-    <Compile Include="Migrations\202008261450341_RATING.Designer.cs">
-      <DependentUpon>202008261450341_RATING.cs</DependentUpon>
+    <Compile Include="Migrations\202008271140112_rating.cs" />
+    <Compile Include="Migrations\202008271140112_rating.Designer.cs">
+      <DependentUpon>202008271140112_rating.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -65,13 +65,13 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OnlineShopMASK.Core\OnlineShopMASK.Core.csproj">
-      <Project>{D8336233-9F5C-432D-B83F-663B2F2ADCBD}</Project>
+      <Project>{d8336233-9f5c-432d-b83f-663b2f2adcbd}</Project>
       <Name>OnlineShopMASK.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202008261450341_RATING.resx">
-      <DependentUpon>202008261450341_RATING.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202008271140112_rating.resx">
+      <DependentUpon>202008271140112_rating.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

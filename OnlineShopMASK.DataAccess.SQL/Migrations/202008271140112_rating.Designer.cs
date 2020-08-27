@@ -7,13 +7,13 @@ namespace OnlineShopMASK.DataAccess.SQL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class RATING : IMigrationMetadata
+    public sealed partial class rating : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(RATING));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(rating));
         
         string IMigrationMetadata.Id
         {
-            get { return "202008261450341_RATING"; }
+            get { return "202008271140112_rating"; }
         }
         
         string IMigrationMetadata.Source

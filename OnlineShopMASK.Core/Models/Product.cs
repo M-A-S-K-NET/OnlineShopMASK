@@ -23,8 +23,6 @@ namespace OnlineShopMASK.Core.Models
 
         public string Category { get; set; }
         public string Image { get; set; }
-
-        public int? Rating { get; set; }
-        public string Comment { get; set; }
+        public ProductRating Review { get; set; }
     }
 }

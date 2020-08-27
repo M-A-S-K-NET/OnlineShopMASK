@@ -1,7 +1,7 @@
 ﻿@model OnlineShopMASK.Core.Models.Product
 @{
-    // ViewBag.Title = Model.;
-    var comments = (IEnumerable<OnlineShopMASK.Core.Models.Product>)ViewBag.comment;
+    //ViewBag.Title = Model.ti;'
+    var comments = (IEnumerable<OnlineShopMASK.Core.Models.ProductRating>)ViewBag.Comments;
     var ratingSum = ViewBag.RatingSum;
     var ratingCount = ViewBag.RatingCount;
 
@@ -50,17 +50,17 @@
             <dd>
                 @Html.DisplayFor(model => model.Price)
             </dd>
-            <th>
-                @Html.DisplayNameFor(model => model.Rating)
-            </th>
             <dd>
-                @Html.DisplayFor(model => model.Rating)
+                @Html.DisplayNameFor(model => model.Review.Rating)
             </dd>
-            <th>
-                @Html.DisplayNameFor(model => model.Comment)
-            </th>
             <dd>
-                @Html.DisplayFor(model => model.Comment)
+                @Html.DisplayFor(model => model.Review.Rating)
+            </dd>
+            <dd>
+                @Html.DisplayNameFor(model => model.Review.Comments)
+            </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Review.Comments)
             </dd>
 
 
@@ -73,6 +73,30 @@
     </div>
 </div>
 
+
+@foreach (var c in comments)
+{
+    <hr />
+    <div class="row">
+        <div class="col-md-3">
+            <br />
+            @for (var i = 1; i <= c.Rating; i++)
+            {
+                <span class="starGlowN"></span>
+            }
+            @for (var i = (c.Rating + 1); i <= 5; i++)
+            {
+                <span class="starFadeN"></span>
+            }
+        </div>
+        <div class="col-md-9">
+            @Html.Raw(c.Comments.Replace("\n", "<br />"))
+
+
+        </div>
+    </div>
+}
+<hr />
 @Html.Partial("_CommentBox")
 
 <script>
@@ -85,3 +109,5 @@
         SCRate();
     });
 </script>
+
+

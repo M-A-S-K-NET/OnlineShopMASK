@@ -1,4 +1,4 @@
-namespace OnlineShopMASK.DataAccess.SQL.Migrations
+ï»¿namespace OnlineShopMASK.DataAccess.SQL.Migrations
 {
     using OnlineShopMASK.Core.Models;
     using System;
@@ -98,8 +98,7 @@ namespace OnlineShopMASK.DataAccess.SQL.Migrations
                             Image="28ede8f9-569d-4486-915c-cfe64a579042.jpg",
                             Id="28ede8f9-569d-4486-915c-cfe64a579042",
                             CreatedAt= DateTime.Now,
-                            Rating=rating,
-                            Comment=comment
+                            Review= new ProductRating(){Rating=5,Comments="hello nice product i love it"}
                         },
                          new Product
                         {
@@ -110,20 +109,20 @@ namespace OnlineShopMASK.DataAccess.SQL.Migrations
                             Image="11cbf337-e361-4ec9-a58d-3b336c442a30.jpg",
                             Id="11cbf337-e361-4ec9-a58d-3b336c442a30",
                             CreatedAt= DateTime.Now,
-                            Rating=rating1,
-                            Comment=comment1
+                            Review= new ProductRating(){Rating=3,Comments="hello nice product but i don't love it"}
+
                         },
                           new Product
                         {
                             Name="Lenovo Ideapad 3 14 laptop (platinum gray)",
-                            Description="Lenovo Ideapad 3 14-inch laptop is a great choice for those on the go. The computer has a weight of only 1.2 kg and a super thin profile of 1.79 cm, making it easy to take anywhere.Intel® Core® i5-1035G1 processor8GB DDR4 RAM256GB NVMe SSD",
+                            Description="Lenovo Ideapad 3 14-inch laptop is a great choice for those on the go. The computer has a weight of only 1.2 kg and a super thin profile of 1.79 cm, making it easy to take anywhere.Intelï¿½ Coreï¿½ i5-1035G1 processor8GB DDR4 RAM256GB NVMe SSD",
                             Price =43,
                             Category=cat,
                             Image = "89e65120-7d47-4377-8d7f-28d4677e8fcd.jfif",
                             Id= "89e65120-7d47-4377-8d7f-28d4677e8fcd",
                             CreatedAt= DateTime.Now,
-                            Rating=rating,
-                            Comment=comment
+                            Review= new ProductRating(){Rating=4,Comments="no hello nice product i love it"}
+
                         },
                           //TABLETS
                         new Product
@@ -135,8 +134,8 @@ namespace OnlineShopMASK.DataAccess.SQL.Migrations
                             Image = "bc0104cd-2bd9-4980-bf9a-1a44a01538d4.jfif",
                             Id= "bc0104cd-2bd9-4980-bf9a-1a44a01538d4",
                             CreatedAt= DateTime.Now,
-                            Rating=rating,
-                            Comment=comment
+                            Review= new ProductRating(){Rating=4,Comments="hello nice product i love it"}
+
                         },
                            new Product
                         {
@@ -147,8 +146,8 @@ namespace OnlineShopMASK.DataAccess.SQL.Migrations
                             Image = "603f9174-1697-454a-b39d-ebe1d6829c28.jpg",
                             Id= "603f9174-1697-454a-b39d-ebe1d6829c28",
                             CreatedAt= DateTime.Now,
-                            Rating=rating1,
-                            Comment=comment1
+                            Review= new ProductRating(){Rating=5,Comments="hello nice product i love it"}
+
                         },
                            new Product
                         {
@@ -159,8 +158,8 @@ namespace OnlineShopMASK.DataAccess.SQL.Migrations
                             Image = "a20e5ba5-a979-4e2e-9825-246f19711686.jfif",
                             Id= "a20e5ba5-a979-4e2e-9825-246f19711686",
                             CreatedAt= DateTime.Now,
-                            Rating=rating1,
-                            Comment=comment1
+                            Review= new ProductRating(){Rating=2,Comments="hello nice product i love it"}
+
                         },
                            //MOBILES
                            new Product
@@ -172,20 +171,20 @@ namespace OnlineShopMASK.DataAccess.SQL.Migrations
                             Image = "c9e75c57-9779-4e81-acef-be8cfe38d5be.jpg",
                             Id= "c9e75c57-9779-4e81-acef-be8cfe38d5be",
                             CreatedAt= DateTime.Now,
-                            Rating=rating1,
-                            Comment=comment1
+                           Review= new ProductRating(){Rating=3,Comments="hello nice product i love it"}
+
                         },
                             new Product
                         {
                             Name="Samsung Galaxy Note 10 Lite smartphone (aura glow)",
-                            Description="Samsung Galaxy Note10 Lite smartphone har en ikonisk S Pen och vacker modern design med Infinity-O pekskärm och hållbar 3D Glasstic-baksida i kombinerad glas och plast.6.7 FHD+ Super AMOLED pekskärm 12+12+12Mpx bakre trippelkamera S Pen",
+                            Description="Samsung Galaxy Note10 Lite smartphone har en ikonisk S Pen och vacker modern design med Infinity-O pekskï¿½rm och hï¿½llbar 3D Glasstic-baksida i kombinerad glas och plast.6.7 FHD+ Super AMOLED pekskï¿½rm 12+12+12Mpx bakre trippelkamera S Pen",
                             Price = 549,
                             Category=cat_tablet,
                             Image = "f2f3ed2d-e647-4bc8-ab1c-f825f3230f6a.jpg",
                             Id= "f2f3ed2d-e647-4bc8-ab1c-f825f3230f6a",
                             CreatedAt= DateTime.Now,
-                            Rating=rating,
-                            Comment=comment
+                             Review= new ProductRating(){Rating=3,Comments="hello nice product i love it"}
+
                         },
                              new Product
                         {
@@ -196,8 +195,8 @@ namespace OnlineShopMASK.DataAccess.SQL.Migrations
                             Image = "739bbafd-487a-484b-93fd-6d567c8358a6.jpg",
                             Id= "739bbafd-487a-484b-93fd-6d567c8358a6",
                             CreatedAt= DateTime.Now,
-                            Rating=rating1,
-                            Comment=comment1
+                            Review= new ProductRating(){Rating=3,Comments="hello nice product i love it"}
+
                         },
 
 
