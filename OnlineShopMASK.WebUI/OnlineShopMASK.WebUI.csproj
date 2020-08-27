@@ -211,11 +211,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202008261441554_RatingSystem.cs" />
-    <Compile Include="Migrations\202008261441554_RatingSystem.Designer.cs">
-      <DependentUpon>202008261441554_RatingSystem.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -467,11 +462,6 @@
       <Project>{65CA21A0-C47B-4D9F-9761-749568E63229}</Project>
       <Name>OnlineShopMASK.Services</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202008261441554_RatingSystem.resx">
-      <DependentUpon>202008261441554_RatingSystem.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -35,11 +35,6 @@ namespace OnlineShopMASK.WebUI.Controllers
             
             var Comment = RatingContext.Collection().Where(c => c.Id.Equals(id)).ToList();
             
-            if(Comment == null)
-            {
-                return RedirectToAction("Index");
-            }
-
             ViewBag.Comments = Comment;
 
             var ratings = RatingContext.Collection().Where(r => r.Id.Equals(id)).ToList();
