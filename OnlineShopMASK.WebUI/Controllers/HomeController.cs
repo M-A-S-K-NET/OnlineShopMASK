@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace OnlineShopMASK.WebUI.Controllers
 {
-    [AllowAnonymous]
+    
     public class HomeController : Controller
     {
         IRepository<Product> context;
@@ -19,6 +19,7 @@ namespace OnlineShopMASK.WebUI.Controllers
             context = productContext;
             productCategories = productCategoryContext;
         }
+        [AllowAnonymous]
         public ActionResult Index(string SearchString)
         {
             var products = from p in context.Collection()
@@ -32,7 +33,7 @@ namespace OnlineShopMASK.WebUI.Controllers
 
             return View(products.ToList());
         }
-
+        [AllowAnonymous]
         public ActionResult Details(string id)
         {
             Product product = context.Find(id);
@@ -47,10 +48,10 @@ namespace OnlineShopMASK.WebUI.Controllers
             }
 
         }
-
+        [AllowAnonymous]
         public ActionResult About()
         {
-            ViewBag.Message = "About Mask Online Shop";
+            ViewBag.Message = "Welcome to MaskShopping.se";
             return View();
         }
 
@@ -60,12 +61,14 @@ namespace OnlineShopMASK.WebUI.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         public ActionResult Conditions()
         {
             ViewBag.Message = "Terms & Conditions ";
             return View();
         }
 
+        [AllowAnonymous]
         public ActionResult PrivacyPolicy()
         {
             ViewBag.Message = "Privacy Policy ";
@@ -78,11 +81,14 @@ namespace OnlineShopMASK.WebUI.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         public ActionResult Warranty()
         {
-            ViewBag.Message = "Warranty & Repair ";
+            ViewBag.Message = "Return & Repair ";
             return View();
         }
+
+        [AllowAnonymous]
 
         public ActionResult FAQ()
         {

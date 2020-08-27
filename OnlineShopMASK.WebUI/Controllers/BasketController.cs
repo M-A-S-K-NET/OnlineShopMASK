@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace OnlineShopMASK.WebUI.Controllers
 {
+    
     public class BasketController : Controller
     {
         IRepository<Customer> customers;
@@ -20,21 +21,25 @@ namespace OnlineShopMASK.WebUI.Controllers
             this.customers = Customers;
         }
         // GET: Basket
+        [AllowAnonymous]
         public ActionResult Index()
         {
             var model = basketService.GetBasketItems(this.HttpContext);
             return View(model);
         }
+        [AllowAnonymous]
         public ActionResult AddToBasket(string Id)
         {
             basketService.AddToBasket(this.HttpContext, Id);
             return RedirectToAction("Index");
         }
+        [AllowAnonymous]
         public ActionResult RemoveFromBasket(string Id)
         {
             basketService.RemoveFromBasket(this.HttpContext, Id);
             return RedirectToAction("Index");
         }
+        [AllowAnonymous]
         public PartialViewResult BasketSummary()
         {
             var basketSummary = basketService.GetBasketSummary(this.HttpContext);
@@ -44,7 +49,8 @@ namespace OnlineShopMASK.WebUI.Controllers
         [Authorize]
         public ActionResult Checkout()
         {
-            Customer customer = customers.Collection().FirstOrDefault(c => c.Email == User.Identity.Name);
+            // Customer customer = customers.Collection().FirstOrDefault(c => c.Email == User.Identity.Name);
+            var customer = new Customer();
             if (customer != null)
             {
                 Order order = new Order()
@@ -65,6 +71,8 @@ namespace OnlineShopMASK.WebUI.Controllers
                 return RedirectToAction("Error");
             }
         }
+
+
         [HttpPost]
         [Authorize]
         public ActionResult Checkout(Order order)

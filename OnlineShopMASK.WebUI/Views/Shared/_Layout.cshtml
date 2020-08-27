@@ -3,118 +3,42 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        .img-zoom-container {
-            position: relative;
-        }
-
-        .img-zoom-lens {
-            position: absolute;
-            border: 1px solid #d4d4d4;
-            /*set the size of the lens:*/
-            width: 40px;
-            height: 40px;
-        }
-
-        .img-zoom-result {
-            border: 1px solid #d4d4d4;
-            /*set the size of the result div:*/
-            width: 300px;
-            height: 300px;
-        }
-    </style>
-    <script>
-function imageZoom(imgID, resultID) {
-  var img, lens, result, cx, cy;
-  img = document.getElementById(imgID);
-  result = document.getElementById(resultID);
-  /*create lens:*/
-  lens = document.createElement("DIV");
-  lens.setAttribute("class", "img-zoom-lens");
-  /*insert lens:*/
-  img.parentElement.insertBefore(lens, img);
-  /*calculate the ratio between result DIV and lens:*/
-  cx = result.offsetWidth / lens.offsetWidth;
-  cy = result.offsetHeight / lens.offsetHeight;
-  /*set background properties for the result DIV:*/
-  result.style.backgroundImage = "url('" + img.src + "')";
-  result.style.backgroundSize = (img.width * cx) + "px " + (img.height * cy) + "px";
-  /*execute a function when someone moves the cursor over the image, or the lens:*/
-  lens.addEventListener("mousemove", moveLens);
-  img.addEventListener("mousemove", moveLens);
-  /*and also for touch screens:*/
-  lens.addEventListener("touchmove", moveLens);
-  img.addEventListener("touchmove", moveLens);
-  function moveLens(e) {
-    var pos, x, y;
-    /*prevent any other actions that may occur when moving over the image:*/
-    e.preventDefault();
-    /*get the cursor's x and y positions:*/
-    pos = getCursorPos(e);
-    /*calculate the position of the lens:*/
-    x = pos.x - (lens.offsetWidth / 2);
-    y = pos.y - (lens.offsetHeight / 2);
-    /*prevent the lens from being positioned outside the image:*/
-    if (x > img.width - lens.offsetWidth) {x = img.width - lens.offsetWidth;}
-    if (x < 0) {x = 0;}
-    if (y > img.height - lens.offsetHeight) {y = img.height - lens.offsetHeight;}
-    if (y < 0) {y = 0;}
-    /*set the position of the lens:*/
-    lens.style.left = x + "px";
-    lens.style.top = y + "px";
-    /*display what the lens "sees":*/
-    result.style.backgroundPosition = "-" + (x * cx) + "px -" + (y * cy) + "px";
-  }
-  function getCursorPos(e) {
-    var a, x = 0, y = 0;
-    e = e || window.event;
-    /*get the x and y positions of the image:*/
-    a = img.getBoundingClientRect();
-    /*calculate the cursor's x and y coordinates, relative to the image:*/
-    x = e.pageX - a.left;
-    y = e.pageY - a.top;
-    /*consider any page scrolling:*/
-    x = x - window.pageXOffset;
-    y = y - window.pageYOffset;
-    return {x : x, y : y};
-  }
-}
-    </script>
     <link rel="stylesheet" href="~/Content/Site.css" type="text/css" />
+    <script src="~/Scripts/popper.min.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+
 </head>
 <body>
-    <div class="row" style="padding-left:50px">
-        <h2>MaskShopping.Se</h2>
-        <div style="padding-left:20px;padding-top:10px">
-            <form asp-controller="ProductManager" asp-action="Index">
-                <p>
-
-                    <input type="text" name="searchString">
-                    <input type="submit" value="Search" />
-
-                </p>
-            </form>
-        </div>
+    <div class="container-fluid" style="padding-left:50px">
+        <a class="navbar-brand" href="@Url.Action("Index", "Home")">
+            <img src="~/Content/ProductImages/masklogo.png" alt="Logo" style="width:120px;" />
+        </a>
+   
+        <span class=" float-right mt-2 mr-4">
+            <a class="text-danger" href="@Url.Action("Index","WishList")">
+                <i class="fa fa-heart fa-2x "></i>
+            </a>
+            <a class="" href="@Url.Action("Index","Basket")">
+                <i class="fa fa-shopping-cart fa-2x "></i>
+            </a>
+        </span>
     </div>
 
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
 
         <div class="container">
-            @Html.ActionLink("OnlineShopMASK", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="navbar-collapse collapse">
+
                 <ul class="nav navbar-nav mr-auto">
                     <li class="nav-item">@Html.ActionLink("All Products", "Index", "ProductView", null, new { @class = "nav-link" })</li>
 
@@ -131,95 +55,83 @@ function imageZoom(imgID, resultID) {
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
+
     </nav>
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <div class="Footer-Main-container">
 
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="card" style="height:15rem;">
-                            <div class="card-body">
-                                <h4 class="card-title">Customer Information</h4>
-                                <ul style="list-style-type: none;">
-                                    <li>@Html.ActionLink("Conditions", "Conditions", "Home", null, new { @class = "nav-link" })</li>
-                                    <li>@Html.ActionLink("Privacy Policy", "PrivacyPolicy", "Home", null, new { @class = "nav-link" })</li>
-                                    <li>@Html.ActionLink("Our Services", "OurServices", "Home", null, new { @class = "nav-link" })</li>
-                                </ul>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3">
-                        <div class="card" style="height:15rem;">
-                            <div class="card-body">
-                                <h4 class="card-title">Customer Service</h4>
-                                <ul style="list-style-type: none;">
-                                    <li>@Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })</li>
-                                    <li>@Html.ActionLink("Warranty & Repair", "Warranty", "Home", null, new { @class = "nav-link" })</li>
-                                    <li>@Html.ActionLink("FAQ", "FAQ", "Home", null, new { @class = "nav-link" })</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3">
-                        <div class="card" style="height:15rem;">
-                            <div class="card-body">
-                                <h4 class="card-title">About Mask</h4>
-                                <ul style="list-style-type: none;">
-                                    <li>@Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link" })</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3">
-                        <div class="card" style="height:15rem;">
-                            <div class="card-body">
-                                <h4 class="card-title">Payments</h4>
-                                <ul style="list-style-type: none;">
-                                    <li><a href="#" class="card-link"><img src="~/Content/ProductImages/PayPal.png" height="70" width="70" alt="PayPal" class="img-thumbnail"></a></li>
-                                    <li><a href="#" class="card-link"><img src="~/Content/ProductImages/CreditCard.jpg" height="20" width="70" alt="Credit Card" class="img-thumbnail"></a></li>
-                                    <li><a href="#" class="card-link"><img src="~/Content/ProductImages/Mastercard.png" height="70" width="70" alt="Master Card" class="img-thumbnail"></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <br />
-
-            <div class="Bottom-container">
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        @*<div class="card">
-                            <div class="card-body">*@
-                        <h4 @*class="card-title"*@>Delivery And Gurantee</h4>
-                        <a href="#"><img src="~/Content/ProductImages/logo-DHL.png" height="70" width="70" alt="DHL" class="img-thumbnail"></a>
-                        <a href="#"><img src="~/Content/ProductImages/Best.png" height="70" width="70" alt="Best" class="img-thumbnail"></a>
-                        <a href="#"><img src="~/Content/ProductImages/Budbee.png" height="70" width="70" alt="Budbee" class="img-thumbnail"></a>
-                        @*</div>
-                            </div>*@
-                    </div>
-                </div>
-            </div>
-
-
-
-
-        </footer>
     </div>
+    <footer>
+        <div class="Footer-Main-container modal-footer alert-dark">
+
+            <div class="row">
+                <div class="col-md-3">
+
+                    <ul style="list-style-type:none">
+                        <li><h4 class="card-title">About Us</h4></li>
+                        <li>@Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Terms Of Purchase", "Conditions", "Home", null, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Privacy Policy", "PrivacyPolicy", "Home", null, new { @class = "nav-link" })</li>
+
+                    </ul>
+                </div>
+
+                <div class="col-md-3">
+
+                    <ul style="list-style-type: none;">
+                        <li><h4 class="card-title">Customer Service</h4></li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Return & Repair", "Warranty", "Home", null, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("FAQ", "FAQ", "Home", null, new { @class = "nav-link" })</li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3">
+
+                    <ul style="list-style-type: none;">
+                        <li><h4 class="card-title">Payments</h4></li>
+                        <li><a href="#" class="card-link"><img src="~/Content/ProductImages/PayPal.png" height="70" width="70" alt="PayPal" class="img-thumbnail"></a></li>
+                        <li><a href="#" class="card-link"><img src="~/Content/ProductImages/CreditCard.jpg" height="20" width="70" alt="Credit Card" class="img-thumbnail"></a></li>
+                        <li><a href="#" class="card-link"><img src="~/Content/ProductImages/Mastercard.png" height="70" width="70" alt="Master Card" class="img-thumbnail"></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <a class="navbar-brand" href="@Url.Action("Index", "Home")">
+                        <img src="~/Content/ProductImages/masklogo.png" alt="Logo" style="width:120px;" />
+                    </a>
+                    <p>
+                        We use cookies to increase user-friendliness in accordance with the Electronic Communications Act.
+
+                    </p>
+                    <a target="_parent" href="https://dhandel.se/trygg-e-handel/certifierade-e-handlare/97/">
+                        <img src="~/Content/ProductImages/Garanti.jpg" alt="Logo" style="width:120px;" />
+                    </a>
+
+
+                </div>
+            </div>
+
+        </div>
+        <div class="Bottom-container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    @*<div class="card">
+                        <div class="card-body">*@
+                    <h4 @*class="card-title"*@>Delivery And Gurantee</h4>
+                    <a href="#"><img src="~/Content/ProductImages/logo-DHL.png" height="70" width="70" alt="DHL" class="img-thumbnail"></a>
+                    <a href="#"><img src="~/Content/ProductImages/Best.png" height="70" width="70" alt="Best" class="img-thumbnail"></a>
+                    <a href="#"><img src="~/Content/ProductImages/Budbee.png" height="70" width="70" alt="Budbee" class="img-thumbnail"></a>
+                    @*</div>
+                        </div>*@
+                </div>
+            </div>
+        </div>
+    </footer>
 
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/popper")
     @Scripts.Render("~/bundles/bootstrap")
+
     @RenderSection("scripts", required: false)
-    <script>
-        // Initiate zoom effect:
-        imageZoom("myimage", "myresult");
-    </script>
 </body>
 </html>
