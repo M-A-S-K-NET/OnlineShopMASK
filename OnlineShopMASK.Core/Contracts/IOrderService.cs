@@ -12,5 +12,8 @@ namespace OnlineShopMASK.Core.Contracts
     public interface IOrderService
     {
         void CreateOrder(Order baseOrder, List<BasketItemViewModel> basketItems);
+        void UpdateOrder(Order updatedOrder);
+        List<Order> GetOrderList();
+        Order GetOrder(string id);
     }
 }
