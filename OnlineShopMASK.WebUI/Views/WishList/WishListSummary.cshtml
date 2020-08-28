@@ -1,0 +1,9 @@
+﻿
+
+@model OnlineShopMASK.Core.ViewModels.WishListSummaryViewModel
+
+
+<ul class="nav navbar-nav navbar-right">
+    <li><a href="@Url.Action("Index", "WishList")">@Model.WishListCount items</a></li>
+    <li><a href="@Url.Action("Index", "WishList")">@String.Format("{0:c}", Model.WishListTotal)</a></li>
+</ul>

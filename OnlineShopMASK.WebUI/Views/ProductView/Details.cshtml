@@ -29,8 +29,7 @@
                 <b>Price:  @Html.DisplayFor(model => model.Price)</b>
                 <hr />
                 <a href="@Url.Action("AddToBasket", "Basket", new { Id=Model.Id})" class="btn btn-outline-primary float-right">Add to Basket</a>
-                <a href="#" class="btn btn-outline-danger float-left"> Add to WishList</a>
-
+                <a href="@Url.Action("AddToWishList", "WishList", new { Id=Model.Id})" class="btn btn-outline-danger float-left"> Add to Wish List</a>
             </div>
         </div>
     </div>

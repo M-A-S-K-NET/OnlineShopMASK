@@ -208,6 +208,7 @@
     <Compile Include="Controllers\ProductViewController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\usersController.cs" />
+    <Compile Include="Controllers\WishListController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -435,10 +436,13 @@
     <Content Include="webfonts\fa-solid-900.woff" />
     <Content Include="webfonts\fa-solid-900.woff2" />
     <Content Include="Views\Shared\_CommentBox.cshtml" />
+    <Content Include="Views\WishList\Index.cshtml" />
+    <Content Include="Views\Basket\Checkout.cshtml" />
+    <Content Include="Views\Basket\ThankYou.cshtml" />
+    <Content Include="Views\WishList\WishListSummary.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\ArticlesComments\" />
     <Folder Include="Views\ProductRating\" />
   </ItemGroup>
   <ItemGroup>

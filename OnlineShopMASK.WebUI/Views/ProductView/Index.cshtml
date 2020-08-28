@@ -41,7 +41,9 @@
                             @*<p class="card-text" style="height:300px" >@item.Description</p>*@
                             <p class="card-text" style="height:50px"><strong>Price:</strong>@item.Price</p><hr />
 
-                            <a href="@Url.Action("AddToBasket", "Basket", new { Id=item.Id})" class="btn btn-primary">Add to Basket</a>
+                            <a href="@Url.Action("AddToBasket", "Basket", new { Id=item.Id})" class="btn btn-outline-primary float-right">Add to Basket</a>
+                            <a href="@Url.Action("AddToWishList", "WishList", new { Id=item.Id})" class="fa fa-heart fa-2x text-danger float-left"></a>
+
 
                         </div>
                     </div>
