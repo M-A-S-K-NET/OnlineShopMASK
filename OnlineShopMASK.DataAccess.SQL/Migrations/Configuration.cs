@@ -84,7 +84,6 @@ namespace OnlineShopMASK.DataAccess.SQL.Migrations
                     var cat_tablet = context.productCategories.FirstOrDefault(x=>x.Category.Equals("Tablets")).Category;
                     var cat_Mobile = context.productCategories.FirstOrDefault(x => x.Category.Equals("Mobiles")).Category;
                     var cat = context.productCategories.FirstOrDefault().Category;
-                    var cat_tablet = context.productCategories.FirstOrDefault().Category;
                     var rating = context.ProductRating.FirstOrDefault().Rating;
                     var comment = context.ProductRating.FirstOrDefault().Comments;
                     var rating1 = context.ProductRating.FirstOrDefault().Rating;
