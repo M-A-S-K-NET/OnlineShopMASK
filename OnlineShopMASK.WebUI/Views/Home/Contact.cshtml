@@ -1,28 +1,29 @@
 ﻿@{
-    ViewBag.Title = "Customer Service";
+    ViewBag.Title = "Contact & Help";
 }
+<div class="jumbotron text-center">
+    <h2>@ViewBag.Title.</h2>
+</div>
 
-
-<h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
 <div class="row">
-    <div class="col-xs-12 col-md-4 " style="padding:20px">
-        <a href="~/Content/ProductImages/Shipping & Delivery.png">
+    <div class="col-xs-12 col-md-4" style="padding:20px">
+        @*<a href="~/Content/ProductImages/Shipping & Delivery.png">*@
             <img class="image" style="height:300px;width:300px;" alt="Shipping and delivery" title="Shipping and delivery" src="~/Content/ProductImages/Shipping.png">
-        </a>
+        @*</a>*@
     </div>
 
     <div class="col-xs-12 col-md-4 " style="padding:20px">
-        <a href="https://www.komplett.se/kundservice/60-dagars-oeppet-koep/">
+        @*<a href="https://www.komplett.se/kundservice/60-dagars-oeppet-koep/">*@
             <img class="image" style="height:300px;width:300px;" alt="Open Purchase" title="Open Purchase" src="~/Content/ProductImages/Open Purchase.png">
-        </a>
+        @*</a>*@
     </div>
 
     <div class="col-xs-12 col-md-4" style="padding:20px">
-        <a href="#">
+        @*<a href="#">*@
             <img class="image" style="height:300px;width:300px;" alt="Warranty" title="warranty" src="~/Content/ProductImages/Warranty.png">
-        </a>
+        @*</a>*@
     </div>
 
 </div>
@@ -253,3 +254,48 @@
         </div>
     </div>
 </div>
+
+<div class="row">
+    <div class="col-xs-12 col-sm-12">
+        <div class="rich-text-editor">
+            <p style="font-size: 3px;"><br><br></p>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+
+    <div class="col-xs-12 col-sm-4">
+        <h4>Chat</h4>
+        <p>
+            Open weekends weekdays 09-17
+            You will find the chat at the bottom right of our website
+        </p>
+    </div>
+
+    <div class="col-xs-12 col-sm-4">
+        <h4>Phone</h4>
+        <p>
+            Open weekends weekdays 09-17
+            (B2B 09-17)
+            Phone: 031-710 20 00
+        </p>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+        <h4>E-mail</h4>
+        <p>
+            <a href="mailto:Support@example.com" title="CLICK HERE TO SEND EMAIL" class="btn-outline-info">"CLICK HERE TO SEND EMAIL"</a>
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12 col-sm-12">
+        <div class="rich-text-editor">
+            <p style="font-size: 3px;"><br><br></p>
+        </div>
+    </div>
+</div>
+
+
+
