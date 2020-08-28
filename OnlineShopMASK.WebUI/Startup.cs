@@ -59,14 +59,14 @@ namespace OnlineShopMASK.WebUI
 
             }
 
-            // creating Creating Employee role   
-            if (!roleManager.RoleExists("Supplier"))
-            {
-                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
-                role.Name = "Supplier";
-                roleManager.Create(role);
+            //// creating Creating Employee role   
+            //if (!roleManager.RoleExists("Supplier"))
+            //{
+            //    var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
+            //    role.Name = "Supplier";
+            //    roleManager.Create(role);
 
-            }
+            //}
         }
     }
 }

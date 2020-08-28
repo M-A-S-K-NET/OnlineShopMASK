@@ -63,6 +63,7 @@ namespace OnlineShopMASK.WebUI
 
             // Login user
             container.RegisterType<AccountController>(new InjectionConstructor());
+            
         }
     }
 }

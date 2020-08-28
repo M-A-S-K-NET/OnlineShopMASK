@@ -17,7 +17,20 @@
 
     <div class="row no-gutters">
         <div class="col-md-8">
-            <img src="~/Content/ProductImages/@Model.Image" class="card-img" alt="today special image" height="420px;">
+            <div class="img-zoom-container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div id="myresult" class="img-zoom-result"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <img id="myimage" width="300" height="240" class="img-responsive" src="~/Content/ProductImages/@Model.Image" />
+                    </div>
+
+                </div>
+                
+                
+            </div>
+            @*<img src="~/Content/ProductImages/@Model.Image" class="card-img" alt="today special image" height="420px;">*@
         </div>
         <div class="col-md-4">
             <div class="card-body">

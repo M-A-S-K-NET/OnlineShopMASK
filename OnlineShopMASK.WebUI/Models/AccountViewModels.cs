@@ -4,6 +4,7 @@ using System.Web.Mvc;
 
 namespace OnlineShopMASK.WebUI.Models
 {
+    [AllowAnonymous]
     public class ExternalLoginConfirmationViewModel
     {
         [Required]
