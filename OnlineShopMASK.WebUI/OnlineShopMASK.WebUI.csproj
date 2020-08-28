@@ -240,7 +240,7 @@
     <Content Include="Content\ProductImages\c9e75c57-9779-4e81-acef-be8cfe38d5be.jpg" />
     <Content Include="Content\RatingImages\StarFade.gif" />
     <Content Include="Content\RatingImages\StarGlow.gif" />
-    <Content Include="Content\Stie.css" />
+    <Content Include="Content\site.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />

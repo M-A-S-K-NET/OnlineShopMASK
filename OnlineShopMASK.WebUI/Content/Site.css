@@ -17,30 +17,57 @@ select,
 textarea {
     max-width: 280px;
 }
+
 .Footer-Main-container {
-    padding:10px;
+    padding: 10px;
 }
 
 .Bottom-container {
-    background-color:grey;
-    padding:10px;
+    background-color: grey;
+    padding: 10px;
 }
-/*.card {
-    border:double;
-    
-    padding:5px;
-}*/
-/*caurosel*/
 
-
-.carousel-inner {
-    width: 100%;
-    max-height: 450px;
+.card {
+    border: double;
+    padding: 5px;
 }
 
 
 
 
+/*Rating Style */
+.commentBox {
+    background-color: #efefef;
+    padding: 10px;
+    border-radius: 10px;
+}
 
+.starFade {
+    background-image: url('~/Content/RatingImages/StarGlow.gif');
+    min-width: 30px;
+    min-height: 30px;
+    display: inline-block;
+    cursor: pointer;
+}
 
+.starFadeN {
+    background-image: url('~/Content/RatingImages/StarFade.gif');
+    min-width: 30px;
+    min-height: 30px;
+    display: inline-block;
+}
 
+.starGlow {
+    background-image: url('~/Content/RatingImages/StarGlow.gif');
+    min-width: 30px;
+    min-height: 30px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.starGlowN {
+    background-image: url('~/Content/RatingImages/StarGlow.gif');
+    min-width: 30px;
+    min-height: 30px;
+    display: inline-block;
+}

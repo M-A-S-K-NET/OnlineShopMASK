@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Diagnostics;
+using System.Net;
 
 namespace OnlineShopMASK.WebUI.Controllers
 {
@@ -53,54 +54,71 @@ namespace OnlineShopMASK.WebUI.Controllers
 
         public ActionResult Details(string id)
         {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
             Product product = context.Find(id);
-            Debug.WriteLine("HHHHHHHHHHHHHHHH");
             if (product == null)
             {
                 return HttpNotFound();
             }
+
+            ViewBag.ProductId = id;
+
+            var comments = productRating.Collection().Where(d => d.Id.Equals(id)).ToList();
+            ViewBag.Comments = comments;
+
+            var ratings = productRating.Collection().Where(d => d.Id.Equals(id)).ToList();
+            if (ratings.Count() > 0)
+            {
+                var ratingSum = ratings.Sum(d => d.Rating.Value);
+                ViewBag.RatingSum = ratingSum;
+                var ratingCount = ratings.Count();
+                ViewBag.RatingCount = ratingCount;
+            }
             else
             {
-
-                return View(product);
+                ViewBag.RatingSum = 0;
+                ViewBag.RatingCount = 0;
             }
 
+            return View(product);
         }
-        public ActionResult AddRating(string Id)
-        {
-            Product product = context.Find(Id);
-            if (product == null)
-            {
-                return HttpNotFound();
-            }
-            else
-            {
-                ProductManagerViewModel viewModel = new ProductManagerViewModel();
-                viewModel.Product = product;
-                viewModel.ProductCategories = productCategories.Collection();
-                return View(viewModel);
-            }
-        }
-        [HttpPost]
-        public ActionResult Add(FormCollection form)
-        {
-            var comment = form["Comment"].ToString();
-            var productId = form["ProductId"];
-            var rating = int.Parse(form["Rating"]);
+        //public ActionResult AddRating(string Id)
+        //{
+        //    Product product = context.Find(Id);
+        //    if (product == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    else
+        //    {
+        //        ProductListViewModel viewModel = new ProductListViewModel();
+        //        viewModel.ProductRating = productRating.Collection();
+        //        return View(viewModel);
+        //    }
+        //}
+        //[HttpPost]
+        //public ActionResult Add(FormCollection form)
+        //{
+        //    var comment = form["Comment"].ToString();
+        //    var productId = form["ProductId"];
+        //    var rating = int.Parse(form["Rating"]);
 
-            ProductRating productRating = new ProductRating()
-            {
-                Id = productId,
-                Comments = comment,
-                Rating = rating,
-                ThisDateTime = DateTime.Now
-            };
+        //    ProductRating productRating = new ProductRating()
+        //    {
+        //        Id = productId,
+        //        Comments = comment,
+        //        Rating = rating,
+        //        ThisDateTime = DateTime.Now
+        //    };
 
-            //productRating.Comments.Add(comment);
-            
+        //    productRating.Comments (comment);
 
-            return RedirectToAction("Details", "Articles", new { id = productId });
-        }
+
+        //    return RedirectToAction("Details", "Articles", new { id = productId });
+        //}
 
 
 
