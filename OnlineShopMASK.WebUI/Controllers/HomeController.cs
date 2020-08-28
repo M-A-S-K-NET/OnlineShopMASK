@@ -54,7 +54,7 @@ namespace OnlineShopMASK.WebUI.Controllers
             ViewBag.Message = "Welcome to MaskShopping.se";
             return View();
         }
-
+        [AllowAnonymous]
         public ActionResult Contact()
         {
             ViewBag.Message = "Contact Information";

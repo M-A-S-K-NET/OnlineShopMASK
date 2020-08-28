@@ -39,7 +39,10 @@
                 <p class="card-text">
                     @Html.DisplayFor(model => model.Description)
                 </p>
-                <b>Price:  @Html.DisplayFor(model => model.Price)</b>
+                <b>Price:  @Html.DisplayFor(model => model.Price)</b><br />
+                <b>Rating:  @Html.DisplayFor(model => model.Rating)</b><br />
+                <b>Comment: @Html.DisplayFor(model => model.Comment)</b>
+                
                 <hr />
                 <a href="@Url.Action("AddToBasket", "Basket", new { Id=Model.Id})" class="btn btn-outline-primary float-right">Add to Basket</a>
                 <a href="@Url.Action("AddToWishList", "WishList", new { Id=Model.Id})" class="btn btn-outline-danger float-left"> Add to Wish List</a>
