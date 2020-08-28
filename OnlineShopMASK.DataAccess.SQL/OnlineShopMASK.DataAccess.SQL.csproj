@@ -51,9 +51,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataContext.cs" />
-    <Compile Include="Migrations\202008271140112_rating.cs" />
-    <Compile Include="Migrations\202008271140112_rating.Designer.cs">
-      <DependentUpon>202008271140112_rating.cs</DependentUpon>
+    <Compile Include="Migrations\202008271435167_Ratin.cs" />
+    <Compile Include="Migrations\202008271435167_Ratin.Designer.cs">
+      <DependentUpon>202008271435167_Ratin.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -70,8 +70,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202008271140112_rating.resx">
-      <DependentUpon>202008271140112_rating.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202008271435167_Ratin.resx">
+      <DependentUpon>202008271435167_Ratin.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -3,7 +3,7 @@ namespace OnlineShopMASK.DataAccess.SQL.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class rating : DbMigration
+    public partial class Ratin : DbMigration
     {
         public override void Up()
         {
@@ -100,8 +100,11 @@ namespace OnlineShopMASK.DataAccess.SQL.Migrations
                         ThisDateTime = c.DateTime(),
                         Rating = c.Int(),
                         CreatedAt = c.DateTimeOffset(nullable: false, precision: 7),
+                        Product_Id = c.String(maxLength: 128),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Products", t => t.Product_Id)
+                .Index(t => t.Product_Id);
             
             CreateTable(
                 "dbo.Products",
@@ -114,20 +117,17 @@ namespace OnlineShopMASK.DataAccess.SQL.Migrations
                         Category = c.String(),
                         Image = c.String(),
                         CreatedAt = c.DateTimeOffset(nullable: false, precision: 7),
-                        Review_Id = c.String(maxLength: 128),
                     })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.ProductRatings", t => t.Review_Id)
-                .Index(t => t.Review_Id);
+                .PrimaryKey(t => t.Id);
             
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.Products", "Review_Id", "dbo.ProductRatings");
+            DropForeignKey("dbo.ProductRatings", "Product_Id", "dbo.Products");
             DropForeignKey("dbo.OrderItems", "OrderId", "dbo.Orders");
             DropForeignKey("dbo.BasketItems", "BasketId", "dbo.Baskets");
-            DropIndex("dbo.Products", new[] { "Review_Id" });
+            DropIndex("dbo.ProductRatings", new[] { "Product_Id" });
             DropIndex("dbo.OrderItems", new[] { "OrderId" });
             DropIndex("dbo.BasketItems", new[] { "BasketId" });
             DropTable("dbo.Products");

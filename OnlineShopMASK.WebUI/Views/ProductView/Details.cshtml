@@ -1,7 +1,7 @@
 ﻿@model OnlineShopMASK.Core.Models.Product
 @{
     //ViewBag.Title = Model.ti;'
-    var comments = (IEnumerable<OnlineShopMASK.Core.Models.ProductRating>)ViewBag.Comments;
+    var comments = Model.Review;
     var ratingSum = ViewBag.RatingSum;
     var ratingCount = ViewBag.RatingCount;
 
