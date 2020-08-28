@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace OnlineShopMASK.WebUI.Controllers
 {
+    [AllowAnonymous]
     public class WishListController : Controller
     {
         IRepository<Customer> customers;
