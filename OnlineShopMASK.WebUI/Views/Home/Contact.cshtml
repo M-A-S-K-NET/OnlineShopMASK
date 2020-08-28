@@ -1,29 +1,255 @@
 ﻿@{
     ViewBag.Title = "Customer Service";
 }
+
+
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
 <div class="row">
-    <div class="col-md-3">
+    <div class="col-xs-12 col-md-4 " style="padding:20px">
+        <a href="~/Content/ProductImages/Shipping & Delivery.png">
+            <img class="image" style="height:300px;width:300px;" alt="Shipping and delivery" title="Shipping and delivery" src="~/Content/ProductImages/Shipping.png">
+        </a>
+    </div>
+
+    <div class="col-xs-12 col-md-4 " style="padding:20px">
+        <a href="https://www.komplett.se/kundservice/60-dagars-oeppet-koep/">
+            <img class="image" style="height:300px;width:300px;" alt="Open Purchase" title="Open Purchase" src="~/Content/ProductImages/Open Purchase.png">
+        </a>
+    </div>
+
+    <div class="col-xs-12 col-md-4" style="padding:20px">
         <a href="#">
-            <img class="" alt="Shipping and delivery" title="Shipping and delivery" src="~/Content/ProductImages/Shipping.png">
-        </a>  
+            <img class="image" style="height:300px;width:300px;" alt="Warranty" title="warranty" src="~/Content/ProductImages/Warranty.png">
+        </a>
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col-xs-12 col-sm-12">
+        <div class="rich-text-editor">
+            <p style="font-size: 3px;"><br><br></p>
+        </div>
     </div>
 </div>
 
-<Phone>
-    6752365473
-</Phone>
+<div class="row">
+    <div class="col-xs-12 col-sm-12">
+        <div class="rich-text-editor">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12">
+                    <div class="rich-text-editor">
+                        <h3 style="text-align: center;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">FAQ - frequently asked questions:</font></font></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+<div class="row">
+    <div class="col-xs-12 col-sm-12">
+        <div class="rich-text-editor">
+            <p style="font-size: 3px;"><br><br></p>
+        </div>
+    </div>
+</div>
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+<div class="accordion" id="accordionExample">
+    <div class="card">
+        <div class="card-header" id="headingOne">
+            <h2 class="mb-0">
+                <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Shipping &amp; delivery
+                </button>
+            </h2>
+        </div>
+
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+                <a href="#demo1" data-toggle="collapse">When will i receive my order?</a>
+                <div id="demo1" class="collapse">
+                    We have 1-3 days delivery time provided the product is in stock. Orders placed between Monday - Thursday before 12.00 sent the same day.
+                </div>
+                <br />
+                <a href="#demo2" data-toggle="collapse">How do I track my package?</a>
+                <div id="demo2" class="collapse">
+                    We will send a delivery confirmation via e-mail when the package leaves our warehouse.
+                    You can easily  track your package from your order history  when it is on its way to you.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingTwo">
+            <h2 class="mb-0">
+                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Open purchase/right of withdrawal
+                </button>
+            </h2>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="card-body">
+                <a href="#demo3" data-toggle="collapse">How do i return a product on an open purchase or right of withdrawl?</a><br />
+                <div id="demo3" class="collapse">
+                    Mask offers private customers an open purchase for 60 days
+                </div>
+                <a href="#demo4" data-toggle="collapse">How much does it cost to return a product?</a><br />
+                <div id="demo4" class="collapse">
+                    It does not cost anything to return a product for open purchase. You as a customer can receive a prepaid consignment note when establishing your open purchase & right of withdrawal. Instructions for this can be obtained by e-mail.
+                </div>
+                <a href="#demo5" data-toggle="collapse">Important to keep in mind when buying openly</a><br />
+                <div id="demo5" class="collapse">
+                    <ul>
+                        <li>Return the product with original packaging in the same condition as you received it.</li>
+                        <li>You are responsible only for the reduced value of the goods as a result of handling other than what is necessary to determine the nature, properties and function of the goods.</li>
+                        <li>Refunds will be made within 2-14 days after Komplett has received and processed your return.</li>
+                    </ul>
+                </div>
+                <a href="#demo6" data-toggle="collapse">exceptions from open purchase &amp; right of withdrawal</a>
+                <div id="demo6" class="collapse">
+                    <ul>
+                        <li>CDs, DVDs when the seal is broken.</li>
+                        <li>Products in electronic format (games, programs, files, etc.) when the license key / code has been made available.</li>
+                        <li>Use of hygiene items and close-fitting products such as razors, toothbrushes, in-ear headphones is not approved for repurchase for hygiene reasons. If the packaging is broken but the product is unused, you can regret the purchase.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingThree">
+            <h2 class="mb-0">
+                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Warranty &amp; complaint
+                </button>
+            </h2>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+            <div class="card-body">
+                <a href="#demo7" data-toggle="collapse">How do i return a product for warranty or complaint?</a><br />
+                <div id="demo7" class="collapse">
+                    If you discover a defect in a product you have purchased from us, you have the opportunity to send it in for examination and possible action. In some cases, the products need to be sent for service.
+                </div>
+                <a href="#demo8" data-toggle="collapse">How much does it cost to return a product?</a><br />
+                <div id="demo8" class="collapse">
+                    It does not cost anything to return a product in a service case. Remember, however, that a service, inspection and shipping fee may apply if defects that do not fall within warranty or complaint law are found on the product. This can e.g. be physical injuries caused by an accident.
+                </div>
+                <a href="#demo9" data-toggle="collapse">How to return a complete PC for repair?</a><br />
+                <div id="demo9" class="collapse">
+                    Complete PC is sent directly to our service workshop in Gothenburg. We often have the opportunity to remedy errors remotely, and therefore  you are warmly welcome to  contact customer service  and we will help you further with troubleshooting and preparation of any service issues .
+                </div>
+                <a href="#demo10" data-toggle="collapse">How long does a service repair take? </a><br />
+                <div id="demo10" class="collapse">
+                    The time a repair takes can depend on what type of product it is and how difficult the possible fault is to recreate and fix. As a rule, however, a repair takes about 14 days from the time the authorized service workshop receives the product.
+                </div>
+                <a href="#demo11" data-toggle="collapse">Who's repairing my product? </a><br />
+                <div id="demo11" class="collapse">
+                    Different workshops are responsible for different repairs depending on the manufacturer, product or product category.
+                    This is because the workshop must as a rule be authorized. You will therefore find more information about where the product is sent in connection with the creation of a return case.
+                </div>
+                <a href="#demo12" data-toggle="collapse">What about pixel errors on screens? </a><br />
+                <div id="demo12" class="collapse">
+                    TFT screens (screens for desktops and laptops with TFT screens) are precision products that are made up of a large number of pixels. Unfortunately, this is also the weakness of the TFT screens. In order to be able to maintain a reasonable price level, the manufacturers have introduced a pixel policy, which means that you have to accept that individual screens may contain a defective or broken pixel. A screen is not replaced unless the number of defective pixels exceeds a number determined by the manufacturer.
+                    Pixels consist of 3 sub-pixels in the basic colors red, green and blue, which in turn are controlled by their own transistors which decide whether the sub-pixel should be switched off or on. The technology used in manufacturing means that the screen cannot be repaired. It is also not possible to predict when the error may occur.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingFour">
+            <h2 class="mb-0">
+                <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseOne">
+                    Payment
+                </button>
+            </h2>
+        </div>
+
+        <div id="collapseFour" class="collapse show" aria-labelledby="headingFour" data-parent="#accordionExample">
+            <div class="card-body">
+                <a href="#demo13" data-toggle="collapse">I'm missing my invoice,where can i find it?</a><br />
+                <div id="demo13" class="collapse">
+                    Private person Log in to Komplett Bank
+                    Company Invoices and receipts
+                </div>
+                <a href="#demo14" data-toggle="collapse">What payment options does Komplett offer? </a>
+                <div id="demo14" class="collapse">
+                    <ul>
+                        <li>Paypal</li>
+                        <li>Credit Card</li>
+                        <li>Master Card</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingFive">
+            <h2 class="mb-0">
+                <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseOne">
+                    Price match
+                </button>
+            </h2>
+        </div>
+
+        <div id="collapseFive" class="collapse show" aria-labelledby="headingFive" data-parent="#accordionExample">
+            <div class="card-body">
+                <p>We at Komplett take good prices seriously. That is why we are launching "Prismatch", so that you as a customer can always be sure that you are making a good purchase with us. If you find a product at a lower normal price with our competitors, we make sure to match the price at the time of purchase. All you need to do is document that you have found an identical product at a lower price that is in stock at another store before you shop from us.</p>
+                <p>There are some exceptions from our Price Match, see below. The price matching only applies to competitors who are registered in Sweden and their regular prices. Price match therefore does not include products that are on sale or discounted at our competitor, as in these scenarios:</p>
+                <p>
+                    <ul>
+                        <li>Seasonal campaigns e.g. Black Week / Green Weekend, Midday sale</li>
+                        <li>Geographically specific price offers</li>
+                        <li>Discounted price linked to a physical store</li>
+                        <li>Party purchase</li>
+                        <li>Offers valid for a "limited number"</li>
+                        <li>Customer club offer / Member offer</li>
+                        <li>Opening offer</li>
+                        <li>Local stock depletion</li>
+                        <li>Local readagar</li>
+                    </ul>
+
+
+                <p>Products to be priced must be in stock at the competitor. To get a price match, you must contact our customer service at the time of purchase, either by phone, email or chat, with the competitor's price documented. We will then put the discounted product in your shopping cart and you can then complete the purchase as usual. We do not price match after the purchase is completed.</p>
+                <p>Komplett launches Prismatch at the time of purchase from 2020-06-16 at 10. The previous customer promise "Price promise", where you received a gift card if you found an identical product at a competitor at a lower price within 60 days, is thus removed at the same time.</p>
+                <p> Why are we changing the customer promise?</p>
+                <p>We believe that it will be both easier and better for our customers with an immediate price reduction at the time of purchase than getting a gift card.</p>
+                <p>"Price match" as a process also becomes easier and more efficient for Komplett to administer. In this way, we can put our energy into ensuring that we offer our customers the lowest prices on the market.</p>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingSix">
+            <h2 class="mb-0">
+                <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseOne">
+                    Privacy Policy &amp; Complaints Opportunities
+                </button>
+            </h2>
+        </div>
+
+        <div id="collapseSix" class="collapse show" aria-labelledby="headingSix" data-parent="#accordionExample">
+            <div class="card-body">
+                <a href="#demo15" data-toggle="collapse">Privacy Policy</a><br />
+                <div id="demo15" class="collapse">
+                    When you contact Komplett.se via e-mail, your e-mail matter and your contact information are stored with us. It is necessary for us to be able to complete your case and to be able to contact you if there is a need for follow-up. For more information, see our  privacy policy.
+                </div>
+                <a href="#demo16" data-toggle="collapse">Opportunities for complaints</a>
+                <div id="demo16" class="collapse">
+                    If your case is not resolved after you have been in contact with our customer service, you may be able to complain to the General Complaints Board.
+                    Completely follows the General Complaints Board's recommendations.
+
+                    General Complaints Board
+                    Box 174
+                    101 23 Stockholm
+
+                    E-mail:  arn@arn.se
+                    Website:  http://www.arn.se
+                    Phone +46 8 508 860 00
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
