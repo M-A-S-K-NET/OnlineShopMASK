@@ -88,6 +88,24 @@ namespace OnlineShopMASK.DataAccess.SQL.Migrations
                     var comment = context.ProductRating.FirstOrDefault().Comments;
                     var rating1 = context.ProductRating.FirstOrDefault().Rating;
                     var comment1 = context.ProductRating.FirstOrDefault().Comments;
+
+                    var rats = new List<ProductRating>
+                    {
+                        new ProductRating {
+                            Comments = "something something",
+                            Rating = 5
+                        },
+                        new ProductRating {
+                            Comments = "something something",
+                            Rating = 5
+                        },
+                        new ProductRating {
+                            Comments = "something something",
+                            Rating = 5
+                        }
+
+                    };
+
                     var pro = new List<Product>
                     {
                         // LAPTOPS
