@@ -239,7 +239,9 @@
     <Content Include="Content\ProductImages\f2f3ed2d-e647-4bc8-ab1c-f825f3230f6a.jpg" />
     <Content Include="Content\ProductImages\c9e75c57-9779-4e81-acef-be8cfe38d5be.jpg" />
     <Content Include="Content\RatingImages\StarFade.gif" />
+    <Content Include="Content\RatingImages\StarFade.png" />
     <Content Include="Content\RatingImages\StarGlow.gif" />
+    <Content Include="Content\RatingImages\StarGlow.png" />
     <Content Include="Content\site.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />

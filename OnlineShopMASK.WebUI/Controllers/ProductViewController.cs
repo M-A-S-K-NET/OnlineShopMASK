@@ -85,40 +85,40 @@ namespace OnlineShopMASK.WebUI.Controllers
 
             return View(product);
         }
-        //public ActionResult AddRating(string Id)
-        //{
-        //    Product product = context.Find(Id);
-        //    if (product == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    else
-        //    {
-        //        ProductListViewModel viewModel = new ProductListViewModel();
-        //        viewModel.ProductRating = productRating.Collection();
-        //        return View(viewModel);
-        //    }
-        //}
-        //[HttpPost]
-        //public ActionResult Add(FormCollection form)
-        //{
-        //    var comment = form["Comment"].ToString();
-        //    var productId = form["ProductId"];
-        //    var rating = int.Parse(form["Rating"]);
+        public ActionResult Add(string Id)
+        {
+            Product product = context.Find(Id);
+            if (product == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                ProductListViewModel viewModel = new ProductListViewModel();
+                viewModel.ProductRating = productRating.Collection();
+                return View(viewModel);
+            }
+        }
+        [HttpPost]
+        public ActionResult Add(FormCollection form)
+        {
+            var comment = form["Comment"].ToString();
+            var productId = form["ProductId"];
+            var rating = int.Parse(form["Rating"]);
 
-        //    ProductRating productRating = new ProductRating()
-        //    {
-        //        Id = productId,
-        //        Comments = comment,
-        //        Rating = rating,
-        //        ThisDateTime = DateTime.Now
-        //    };
-
-        //    productRating.Comments (comment);
+            ProductRating pr = new ProductRating()
+            {
+                Id = productId,
+                Comments = comment,
+                Rating = rating,
+                ThisDateTime = DateTime.Now
+            };
 
 
-        //    return RedirectToAction("Details", "Articles", new { id = productId });
-        //}
+            productRating.Collection().ToList().Add(pr);
+
+            return RedirectToAction("Details", "Product", new { id = productId });
+        }
 
 
 
