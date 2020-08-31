@@ -28,6 +28,44 @@
     </a>
 </div>
 <hr />
+<div class="container">
+    <div class="row">
+        <div class="col">
+        </div>
+        <div class="col-6">
+            <div class="row">
+                <div class="col">
+                    <a href="@Url.Action("Index", "ProductView")">
+                        <figure style="text-align:center">
+                            <img src="~/Content/ProductImages/mobile.png" style="" />
+                            <figcaption>Mobiles</figcaption>
+                        </figure>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="@Url.Action("Index", "ProductView")">
+                        <figure style="text-align:center">
+                            <img src="~/Content/ProductImages/tablet.png" />
+                            <figcaption>Tablets</figcaption>
+                        </figure>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="@Url.Action("Index", "ProductView")">
+                        <figure style="text-align:center">
+                            <img src="~/Content/ProductImages/laptop.jpg" />
+                            <figcaption>Laptops</figcaption>
+                        </figure>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+        </div>
+    </div>
+</div>
+
+<hr />
 <div class="card border-0">
     <div class="card-header text-light bg-secondary">
         <h2 class="text-center">⭐️ Offer of the week ⭐️</h2>
@@ -39,7 +77,7 @@
                     <img class="card-img-top" src="~/Content/ProductImages/11cbf337-e361-4ec9-a58d-3b336c442a30.jpg" alt="Card image cap">
                 </a>
                 <div class="card-body">
-                    <a href="@Url.Action("Details/11cbf337-e361-4ec9-a58d-3b336c442a30", "ProductView")">
+                    <a href="@Url.Action("Details/11cbf337-e361-4ec9-a58d-3b336c442a30", "ProductView")"  style="text-align:center">
                         <h5 class="card-title text-dark">Asus VivoBook 14 laptop</h5>
                     </a>
                     <p class="card-text">
@@ -59,12 +97,12 @@
                 </div>
             </div>
             <div class="card">
-                <a href="@Url.Action("Details/bc0104cd-2bd9-4980-bf9a-1a44a01538d4", "ProductView")">
-                    <img class="card-img-top " src="~/Content/ProductImages/bc0104cd-2bd9-4980-bf9a-1a44a01538d4.jpg" alt="Card image cap">
+                <a href="@Url.Action("Details/bc0104cd-2bd9-4980-bf9a-1a44a01538d4", "ProductView")" style="text-align:center">
+                    <img class="card-img-top " src="~/Content/ProductImages/bc0104cd-2bd9-4980-bf9a-1a44a01538d4.jpg" alt="Card image cap"style="height:250px;width:auto">
                 </a>
                 <div class="card-body">
                     <a href="@Url.Action("Details/bc0104cd-2bd9-4980-bf9a-1a44a01538d4", "ProductView")">
-                        <h5 class="card-title text-dark">Lenovo Tab M10 HD 32GB WiFi 10.1 tablet</h5>
+                        <h5 class="card-title text-dark">Lenovo Tab M10 10.1 tablet</h5>
                     </a>
                     <ul>
                         <li>10,1" Full HD-skärm</li>
@@ -81,8 +119,8 @@
                 </div>
             </div>
             <div class="card">
-                <a href="@Url.Action("Details/c9e75c57-9779-4e81-acef-be8cfe38d5be", "ProductView")">
-                    <img class="card-img-top " src="~/Content/ProductImages/c9e75c57-9779-4e81-acef-be8cfe38d5be.jpg" alt="Card image cap">
+                <a href="@Url.Action("Details/c9e75c57-9779-4e81-acef-be8cfe38d5be", "ProductView")"  style="text-align:center">
+                    <img class="card-img-top " src="~/Content/ProductImages/c9e75c57-9779-4e81-acef-be8cfe38d5be.jpg" alt="Card image cap" style="height:250px;width:auto">
                 </a>
                 <div class="card-body">
                     <a href="@Url.Action("Details/c9e75c57-9779-4e81-acef-be8cfe38d5be", "ProductView")">
@@ -98,8 +136,8 @@
                         Ord. price SEK 1,499
                         <p class="text-danger">NOW 999:-</p>
                     </div>
-                        <a href="@Url.Action("AddToBasket", "Basket", new { Id="c9e75c57-9779-4e81-acef-be8cfe38d5be"})" class="btn btn-outline-primary float-right">Add to Basket</a>
-                        <a href="@Url.Action("AddToWishList", "WishList", new { Id="c9e75c57-9779-4e81-acef-be8cfe38d5be"})" class="fa fa-heart fa-2x text-danger float-left"></a>
+                    <a href="@Url.Action("AddToBasket", "Basket", new { Id="c9e75c57-9779-4e81-acef-be8cfe38d5be"})" class="btn btn-outline-primary float-right">Add to Basket</a>
+                    <a href="@Url.Action("AddToWishList", "WishList", new { Id="c9e75c57-9779-4e81-acef-be8cfe38d5be"})" class="fa fa-heart fa-2x text-danger float-left"></a>
                 </div>
             </div>
         </div>
@@ -114,8 +152,8 @@
     <div class="card-body">
         <div class="card-deck">
             <div class="card">
-                <a href="@Url.Action("Details/28ede8f9-569d-4486-915c-cfe64a579042", "ProductView")">
-                    <img class="card-img-top" src="~/Content/ProductImages/28ede8f9-569d-4486-915c-cfe64a579042.jpg" alt="Card image cap">
+                <a href="@Url.Action("Details/28ede8f9-569d-4486-915c-cfe64a579042", "ProductView")"  style="text-align:center">
+                    <img class="card-img-top" src="~/Content/ProductImages/28ede8f9-569d-4486-915c-cfe64a579042.jpg" alt="Card image cap" style="height:250px;width:auto">
                 </a>
                 <div class="card-body">
                     <a href="@Url.Action("Details/28ede8f9-569d-4486-915c-cfe64a579042", "ProductView")">
@@ -138,8 +176,8 @@
                 </div>
             </div>
             <div class="card">
-                <a href="@Url.Action("Details/bc0104cd-2bd9-4980-bf9a-1a44a01538d4", "ProductView")">
-                    <img class="card-img-top" src="~/Content/ProductImages/bc0104cd-2bd9-4980-bf9a-1a44a01538d4.jfif" alt="Card image cap">
+                <a href="@Url.Action("Details/bc0104cd-2bd9-4980-bf9a-1a44a01538d4", "ProductView")"  style="text-align:center">
+                    <img class="card-img-top" src="~/Content/ProductImages/bc0104cd-2bd9-4980-bf9a-1a44a01538d4.jfif" alt="Card image cap" style="height:250px;width:auto">
                 </a>
                 <div class="card-body">
                     <a href="@Url.Action("Details/bc0104cd-2bd9-4980-bf9a-1a44a01538d4", "ProductView")">
@@ -160,8 +198,8 @@
                 </div>
             </div>
             <div class="card">
-                <a href="@Url.Action("Details/739bbafd-487a-484b-93fd-6d567c8358a6", "ProductView")">
-                    <img class="card-img-top" src="~/Content/ProductImages/739bbafd-487a-484b-93fd-6d567c8358a6.jpg" alt="Card image cap">
+                <a href="@Url.Action("Details/739bbafd-487a-484b-93fd-6d567c8358a6", "ProductView")"  style="text-align:center">
+                    <img class="card-img-top" src="~/Content/ProductImages/739bbafd-487a-484b-93fd-6d567c8358a6.jpg" alt="Card image cap" style="height:250px;width:auto">
                 </a>
                 <div class="card-body">
                     <a href="@Url.Action("Details/739bbafd-487a-484b-93fd-6d567c8358a6", "ProductView")">
