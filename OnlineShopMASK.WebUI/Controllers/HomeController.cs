@@ -95,5 +95,11 @@ namespace OnlineShopMASK.WebUI.Controllers
             ViewBag.Message = "Frequently Asked Questions ";
             return View();
         }
+
+        public ActionResult AdminPage()
+        {
+            ViewBag.Message = "Admin";
+            return View();
+        }
     }
 }
