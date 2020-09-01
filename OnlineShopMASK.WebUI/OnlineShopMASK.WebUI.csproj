@@ -443,6 +443,7 @@
     <Content Include="Views\Basket\Checkout.cshtml" />
     <Content Include="Views\Basket\ThankYou.cshtml" />
     <Content Include="Views\WishList\WishListSummary.cshtml" />
+    <Content Include="Views\Home\AdminPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
