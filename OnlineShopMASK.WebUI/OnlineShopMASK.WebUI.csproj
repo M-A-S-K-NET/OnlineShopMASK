@@ -447,6 +447,7 @@
     <Content Include="Views\Basket\ThankYou.cshtml" />
     <Content Include="Views\WishList\WishListSummary.cshtml" />
     <Content Include="Views\ProductView\SearchLaptop.cshtml" />
+    <Content Include="Views\ProductView\SearchTablet.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

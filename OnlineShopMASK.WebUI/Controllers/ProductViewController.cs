@@ -130,5 +130,59 @@ namespace OnlineShopMASK.WebUI.Controllers
             return View(model);
 
         }
+
+        public ActionResult SearchLaptop(string SearchString, string Category = null)
+        {
+            List<Product> products;
+            List<ProductCategory> categories = productCategories.Collection().ToList();
+
+            if (Category == null)
+            {
+                products = context.Collection().ToList();
+            }
+            else
+            {
+                products = context.Collection().Where(p => p.Category == Category).ToList();
+
+            }
+
+            if (!String.IsNullOrEmpty(SearchString))
+            {
+                products = context.Collection().Where(s => s.Name.Contains(SearchString)).ToList();
+
+            }
+            ProductListViewModel model = new ProductListViewModel();
+            model.Products = products;
+            model.ProductCategory = categories;
+            return View(model);
+
+        }
+
+        public ActionResult SearchTablet(string SearchString, string Category = null)
+        {
+            List<Product> products;
+            List<ProductCategory> categories = productCategories.Collection().ToList();
+
+            if (Category == null)
+            {
+                products = context.Collection().ToList();
+            }
+            else
+            {
+                products = context.Collection().Where(p => p.Category == Category).ToList();
+
+            }
+
+            if (!String.IsNullOrEmpty(SearchString))
+            {
+                products = context.Collection().Where(s => s.Name.Contains(SearchString)).ToList();
+
+            }
+            ProductListViewModel model = new ProductListViewModel();
+            model.Products = products;
+            model.ProductCategory = categories;
+            return View(model);
+
+        }
     }
 }
