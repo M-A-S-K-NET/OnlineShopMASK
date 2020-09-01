@@ -33,6 +33,7 @@ namespace OnlineShopMASK.WebUI.Controllers
 
             return View(products.ToList());
         }
+
         [AllowAnonymous]
         public ActionResult Details(string id)
         {

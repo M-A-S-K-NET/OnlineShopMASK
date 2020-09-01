@@ -100,15 +100,16 @@
             <img src="~/Content/ProductImages/masklogo.png" alt="Logo" style="width:120px;" />
         </a>
         
-            <form asp-controller="ProductView" asp-action="Index">
-                <p>
-                    <input type="text" name="searchString">
-                    <input type="submit" value="Search" />
-                </p>
-            </form>
-       
-
-        <span class=" float-right mt-2 mr-4">
+        <div>
+            @using (Html.BeginForm("Index", "ProductView", FormMethod.Get))
+            {
+                <input type="text" name="searchString">
+                <input type="submit" value="Search" />
+                   
+            }
+        </div>
+            
+       <span class=" float-right mt-2 mr-4">
             <a class="text-danger" href="@Url.Action("Index","WishList")">
                 <i class="fa fa-heart fa-2x "></i>
             </a>
