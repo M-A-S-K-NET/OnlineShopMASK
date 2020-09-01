@@ -1,11 +1,7 @@
 ﻿@model OnlineShopMASK.Core.ViewModels.ProductListViewModel
 
-@{
-    ViewBag.Title = "Search";
-}
 
-
-<h2>search</h2>
+<h2>search Laptop</h2>
 <form asp-controller="ProductView" asp-action="Index">
     <p>
         <input type="text" name="searchString">
@@ -15,7 +11,7 @@
 
 <div class="row">
 
-    @foreach (var item in Model.Products.Where(c => c.Category == "Mobiles"))
+    @foreach (var item in Model.Products.Where(c => c.Category == "Laptop"))
     {
         <div class="col-sm-4" style="height:510px;">
             <div class="card border-dark mb-1" style="height:500px;">
