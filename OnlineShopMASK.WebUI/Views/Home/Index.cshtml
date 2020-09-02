@@ -67,162 +67,245 @@
 </div>
 
 <hr />
-<div class="card border-0">
-    <div class="card-header text-light bg-secondary">
+
+<!--GRID START-->
+<div class="container">
+    <div class="text-light bg-secondary">
         <h2 class="text-center">⭐️ Offer of the week ⭐️</h2>
     </div>
-    <div class="card-body">
-        <div class="card-deck">
-            <div class="card">
-                <a href="@Url.Action("Details/11cbf337-e361-4ec9-a58d-3b336c442a30", "ProductView")">
-                    <img class="card-img-top" src="~/Content/ProductImages/11cbf337-e361-4ec9-a58d-3b336c442a30.jpg" alt="Card image cap">
-                </a>
+    <div class="row">
+        <!--CARD1-->
+        <div class="col-md-4">
+            <div class="card border-0">
                 <div class="card-body">
-                    <a href="@Url.Action("Details/11cbf337-e361-4ec9-a58d-3b336c442a30", "ProductView")"  style="text-align:center">
-                        <h5 class="card-title text-dark">Asus VivoBook 14 laptop</h5>
-                    </a>
-                    <p class="card-text">
-                        <ul>
-                            <li>Fantastisk 13,3 " Retina-skärm</li>
-                            <li>256 GB SSD och 8 GB minne</li>
-                            <li>Intel Core i3-processor (10:e Gen.)</li>
-                        </ul>
-                    </p>
-                    <div class="card-text">
-                        <p class="text-success">Delivery time: 3-5 weekdays</p>
-                        Ord. price SEK 15,000
-                        <p class="text-danger">NOW 12 999:-</p>
+                    <div class="card-deck">
+                        <div class="card">
+                            <a href="@Url.Action("Details/11cbf337-e361-4ec9-a58d-3b336c442a30", "ProductView")">
+                                <img class="card-img-top" src="~/Content/ProductImages/11cbf337-e361-4ec9-a58d-3b336c442a30.jpg" alt="Card image cap">
+                            </a>
+                            <div class="card-body">
+                                <a href="@Url.Action("Details/11cbf337-e361-4ec9-a58d-3b336c442a30", "ProductView")" style="text-align:center">
+                                    <h5 class="card-title text-dark">Asus VivoBook 14 laptop</h5>
+                                </a>
+                                <p class="card-text">
+                                    <ul>
+                                        <li>Fantastisk 13,3 " Retina-skärm</li>
+                                        <li>256 GB SSD och 8 GB minne</li>
+                                        <li>Intel Core i3-processor (10:e Gen.)</li>
+                                    </ul>
+                                </p>
+                                <div class="card-text">
+                                    <p class="text-success">Delivery time: 3-5 weekdays</p>
+                                    Ord. price SEK 15,000
+                                    <p class="text-danger">NOW 12 999:-</p>
+                                </div>
+                                <a href="@Url.Action("AddToBasket", "Basket", new { Id="11cbf337-e361-4ec9-a58d-3b336c442a30"})" class="btn btn-outline-primary float-right">Add to Basket</a>
+                                <a href="@Url.Action("AddToWishList", "WishList", new { Id="11cbf337-e361-4ec9-a58d-3b336c442a30"})" class="fa fa-heart fa-2x text-danger float-left"></a>
+                            </div>
+                        </div>
                     </div>
-                    <a href="@Url.Action("AddToBasket", "Basket", new { Id="11cbf337-e361-4ec9-a58d-3b336c442a30"})" class="btn btn-outline-primary float-right">Add to Basket</a>
-                    <a href="@Url.Action("AddToWishList", "WishList", new { Id="11cbf337-e361-4ec9-a58d-3b336c442a30"})" class="fa fa-heart fa-2x text-danger float-left"></a>
                 </div>
             </div>
-            <div class="card">
-                <a href="@Url.Action("Details/bc0104cd-2bd9-4980-bf9a-1a44a01538d4", "ProductView")" style="text-align:center">
-                    <img class="card-img-top " src="~/Content/ProductImages/bc0104cd-2bd9-4980-bf9a-1a44a01538d4.jpg" alt="Card image cap"style="height:250px;width:auto">
-                </a>
-                <div class="card-body">
-                    <a href="@Url.Action("Details/bc0104cd-2bd9-4980-bf9a-1a44a01538d4", "ProductView")">
-                        <h5 class="card-title text-dark">Lenovo Tab M10 10.1 tablet</h5>
-                    </a>
-                    <ul>
-                        <li>10,1" Full HD-skärm</li>
-                        <li>32 GB lagring + microSD-kortplats</li>
-                        <li>Högtalare med Dolby Atmos</li>
-                    </ul>
-                    <div class="card-text">
-                        <p class="text-success">Delivery time: 3-5 weekdays</p>
-                        Ord. price SEK 1,499
-                        <p class="text-danger">NOW 999:-</p>
-                    </div>
-                    <a href="@Url.Action("AddToBasket", "Basket", new { Id="bc0104cd-2bd9-4980-bf9a-1a44a01538d4"})" class="btn btn-outline-primary float-right">Add to Basket</a>
-                    <a href="@Url.Action("AddToWishList", "WishList", new { Id="bc0104cd-2bd9-4980-bf9a-1a44a01538d4"})" class="fa fa-heart fa-2x text-danger float-left"></a>
-                </div>
-            </div>
-            <div class="card">
-                <a href="@Url.Action("Details/c9e75c57-9779-4e81-acef-be8cfe38d5be", "ProductView")"  style="text-align:center">
-                    <img class="card-img-top " src="~/Content/ProductImages/c9e75c57-9779-4e81-acef-be8cfe38d5be.jpg" alt="Card image cap" style="height:250px;width:auto">
-                </a>
-                <div class="card-body">
-                    <a href="@Url.Action("Details/c9e75c57-9779-4e81-acef-be8cfe38d5be", "ProductView")">
-                        <h5 class="card-title text-dark">iPhone 7 32 GB (matte black)</h5>
-                    </a>
-                    <ul>
-                        <li>4,7-tums Retina HD-skärm</li>
-                        <li>Står emot vatten och damm</li>
-                        <li>12 MP-kamera med video i 4K</li>
-                    </ul>
-                    <div class="card-text">
-                        <p class="text-success">Delivery time: 3-5 weekdays</p>
-                        Ord. price SEK 1,499
-                        <p class="text-danger">NOW 999:-</p>
-                    </div>
-                    <a href="@Url.Action("AddToBasket", "Basket", new { Id="c9e75c57-9779-4e81-acef-be8cfe38d5be"})" class="btn btn-outline-primary float-right">Add to Basket</a>
-                    <a href="@Url.Action("AddToWishList", "WishList", new { Id="c9e75c57-9779-4e81-acef-be8cfe38d5be"})" class="fa fa-heart fa-2x text-danger float-left"></a>
-                </div>
-            </div>
+            @*2.col-md-4*@
         </div>
+        <!--CARD1-->
+        <!--CARD2-->
+        <div class="col-md-4">
+            @*3.col-md-4*@
+            <div class="card border-0">
+                <div class="card-body">
+                    <div class="card-deck">
+                        <div class="card">
+                            <a href="@Url.Action("Details/bc0104cd-2bd9-4980-bf9a-1a44a01538d4", "ProductView")" style="text-align:center">
+                                <img class="card-img-top " src="~/Content/ProductImages/bc0104cd-2bd9-4980-bf9a-1a44a01538d4.jpg" alt="Card image cap" style="height:250px;width:auto">
+                            </a>
+                            <div class="card-body">
+                                <a href="@Url.Action("Details/bc0104cd-2bd9-4980-bf9a-1a44a01538d4", "ProductView")">
+                                    <h5 class="card-title text-dark">Lenovo Tab M10 10.1 tablet</h5>
+                                </a>
+                                <ul>
+                                    <li>10,1" Full HD-skärm</li>
+                                    <li>32 GB lagring + microSD-kortplats</li>
+                                    <li>Högtalare med Dolby Atmos</li>
+                                </ul>
+                                <div class="card-text">
+                                    <p class="text-success">Delivery time: 3-5 weekdays</p>
+                                    Ord. price SEK 1,499
+                                    <p class="text-danger">NOW 999:-</p>
+                                </div>
+                                <a href="@Url.Action("AddToBasket", "Basket", new { Id="bc0104cd-2bd9-4980-bf9a-1a44a01538d4"})" class="btn btn-outline-primary float-right">Add to Basket</a>
+                                <a href="@Url.Action("AddToWishList", "WishList", new { Id="bc0104cd-2bd9-4980-bf9a-1a44a01538d4"})" class="fa fa-heart fa-2x text-danger float-left"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @*3.col-md-4*@
+        </div>
+        <!--CARD2-->
+        <!--CARD3-->
+        <div class="col-md-4">
+            @*1.col-md-4*@
+            <div class="card border-0">
+                <div class="card-body">
+                    <div class="card-deck">
+                        <div class="card">
+                            <a href="@Url.Action("Details/c9e75c57-9779-4e81-acef-be8cfe38d5be", "ProductView")" style="text-align:center">
+                                <img class="card-img-top " src="~/Content/ProductImages/c9e75c57-9779-4e81-acef-be8cfe38d5be.jpg" alt="Card image cap" style="height:250px;width:auto">
+                            </a>
+                            <div class="card-body">
+                                <a href="@Url.Action("Details/c9e75c57-9779-4e81-acef-be8cfe38d5be", "ProductView")">
+                                    <h5 class="card-title text-dark">iPhone 7 32 GB (matte black)</h5>
+                                </a>
+                                <ul>
+                                    <li>4,7-tums Retina HD-skärm</li>
+                                    <li>Står emot vatten och damm</li>
+                                    <li>12 MP-kamera med video i 4K</li>
+                                </ul>
+                                <div class="card-text">
+                                    <p class="text-success">Delivery time: 3-5 weekdays</p>
+                                    Ord. price SEK 1,499
+                                    <p class="text-danger">NOW 999:-</p>
+                                </div>
+                                <a href="@Url.Action("AddToBasket", "Basket", new { Id="c9e75c57-9779-4e81-acef-be8cfe38d5be"})" class="btn btn-outline-primary float-right">Add to Basket</a>
+                                <a href="@Url.Action("AddToWishList", "WishList", new { Id="c9e75c57-9779-4e81-acef-be8cfe38d5be"})" class="fa fa-heart fa-2x text-danger float-left"></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            @*1.col-md-4*@
+        </div>
+        <!--CARD3-->
+
     </div>
 </div>
+<!--GRID End-->
+
+
 <hr />
 
-<div class="card border-0">
-    <div class="card-header text-light bg-secondary">
-        <h2 class="text-center">⭐️ Best selling Product ⭐️</h2>
-    </div>
-    <div class="card-body">
-        <div class="card-deck">
-            <div class="card">
-                <a href="@Url.Action("Details/28ede8f9-569d-4486-915c-cfe64a579042", "ProductView")"  style="text-align:center">
-                    <img class="card-img-top" src="~/Content/ProductImages/28ede8f9-569d-4486-915c-cfe64a579042.jpg" alt="Card image cap" style="height:250px;width:auto">
-                </a>
-                <div class="card-body">
-                    <a href="@Url.Action("Details/28ede8f9-569d-4486-915c-cfe64a579042", "ProductView")">
-                        <h5 class="card-title text-dark">Samsung Galaxy Book Flex 13.3 2-in-1 (royal blue)</h5>
-                    </a>
-                    <p class="card-text">
-                        <ul>
-                            <li>Fantastisk 13,3 " Retina-skärm</li>
-                            <li>256 GB SSD och 8 GB minne</li>
-                            <li>Intel Core i3-processor (10:e Gen.)</li>
-                        </ul>
-                    </p>
-                    <div class="card-text">
-                        <p class="text-success">Delivery time: 3-5 weekdays</p>
+<div class="text-light bg-secondary">
+    <h2 class="text-center">⭐️ Best selling Product ⭐️</h2>
+</div>
 
-                        <p class="text-danger font-weight-bold">Price : 15 999:-</p>
+<!--GRID Start-->
+<div class="container">
+    <div class="row">
+        <!--CARD1-->
+        <div class="col-md-4">
+            <div class="card border-0">
+                <div class="card-body">
+                    <div class="card-deck">
+                        <div class="card">
+                            <a href="@Url.Action("Details/28ede8f9-569d-4486-915c-cfe64a579042", "ProductView")" style="text-align:center">
+                                <img class="card-img-top" src="~/Content/ProductImages/28ede8f9-569d-4486-915c-cfe64a579042.jpg" alt="Card image cap" style="height:250px;width:auto">
+                            </a>
+                            <div class="card-body">
+                                <a href="@Url.Action("Details/28ede8f9-569d-4486-915c-cfe64a579042", "ProductView")">
+                                    <h5 class="card-title text-dark">Samsung Galaxy Book Flex 13.3 2-in-1 (royal blue)</h5>
+                                </a>
+                                <p class="card-text">
+                                    <ul>
+                                        <li>Fantastisk 13,3 " Retina-skärm</li>
+                                        <li>256 GB SSD och 8 GB minne</li>
+                                        <li>Intel Core i3-processor (10:e Gen.)</li>
+                                    </ul>
+                                </p>
+                                <div class="card-text">
+                                    <p class="text-success">Delivery time: 3-5 weekdays</p>
+
+                                    <p class="text-danger font-weight-bold">Price : 15 999:-</p>
+                                </div>
+                                <a href="@Url.Action("AddToBasket", "Basket", new { Id="28ede8f9-569d-4486-915c-cfe64a579042"})" class="btn btn-outline-primary float-right">Add to Basket</a>
+                                <a href="@Url.Action("AddToWishList", "WishList", new { Id="28ede8f9-569d-4486-915c-cfe64a579042"})" class="fa fa-heart fa-2x text-danger float-left"></a>
+                            </div>
+                        </div>
                     </div>
-                    <a href="@Url.Action("AddToBasket", "Basket", new { Id="28ede8f9-569d-4486-915c-cfe64a579042"})" class="btn btn-outline-primary float-right">Add to Basket</a>
-                    <a href="@Url.Action("AddToWishList", "WishList", new { Id="28ede8f9-569d-4486-915c-cfe64a579042"})" class="fa fa-heart fa-2x text-danger float-left"></a>
                 </div>
             </div>
-            <div class="card">
-                <a href="@Url.Action("Details/bc0104cd-2bd9-4980-bf9a-1a44a01538d4", "ProductView")"  style="text-align:center">
-                    <img class="card-img-top" src="~/Content/ProductImages/bc0104cd-2bd9-4980-bf9a-1a44a01538d4.jfif" alt="Card image cap" style="height:250px;width:auto">
-                </a>
-                <div class="card-body">
-                    <a href="@Url.Action("Details/bc0104cd-2bd9-4980-bf9a-1a44a01538d4", "ProductView")">
-                        <h5 class="card-title text-dark">Samsung Galaxy Tab A 10.1 WiFi 2019 32 GB (black)</h5>
-                    </a>
-                    <ul>
-                        <li>10,1" Full HD-skärm</li>
-                        <li>32 GB lagring + microSD-kortplats</li>
-                        <li>Högtalare med Dolby Atmos</li>
-                    </ul>
-                    <div class="card-text">
-                        <p class="text-success">Delivery time: 3-5 weekdays</p>
 
-                        <p class="text-danger font-weight-bold">Price : 12 666:-</p>
-                    </div>
-                    <a href="@Url.Action("AddToBasket", "Basket", new { Id="bc0104cd-2bd9-4980-bf9a-1a44a01538d4"})" class="btn btn-outline-primary float-right">Add to Basket</a>
-                    <a href="@Url.Action("AddToWishList", "WishList", new { Id="bc0104cd-2bd9-4980-bf9a-1a44a01538d4"})" class="fa fa-heart fa-2x text-danger float-left"></a>
-                </div>
-            </div>
-            <div class="card">
-                <a href="@Url.Action("Details/739bbafd-487a-484b-93fd-6d567c8358a6", "ProductView")"  style="text-align:center">
-                    <img class="card-img-top" src="~/Content/ProductImages/739bbafd-487a-484b-93fd-6d567c8358a6.jpg" alt="Card image cap" style="height:250px;width:auto">
-                </a>
-                <div class="card-body">
-                    <a href="@Url.Action("Details/739bbafd-487a-484b-93fd-6d567c8358a6", "ProductView")">
-                        <h5 class="card-title text-dark">Huawei P30 Pro smartphone 128 GB (breathing crystal)</h5>
-                    </a>
-                    <ul>
-                        <li>4,7-tums Retina HD-skärm</li>
-                        <li>Står emot vatten och damm</li>
-                        <li>12 MP-kamera med video i 4K</li>
-                    </ul>
-                    <div class="card-text">
-                        <p class="text-success">Delivery time: 3-5 weekdays</p>
-
-                        <p class="text-danger font-weight-bold">Price  23 099:-</p>
-                    </div>
-                    <a href="@Url.Action("AddToBasket", "Basket", new { Id="739bbafd-487a-484b-93fd-6d567c8358a6"})" class="btn btn-outline-primary float-right">Add to Basket</a>
-                    <a href="@Url.Action("AddToWishList", "WishList", new { Id="739bbafd-487a-484b-93fd-6d567c8358a6"})" class="fa fa-heart fa-2x text-danger float-left"></a>
-                </div>
-            </div>
         </div>
+        <!--CARD1-->
+
+        <!--CARD2-->
+        <div class="col-md-4">
+
+            <div class="card border-0">
+                <div class="card-body">
+                    <div class="card-deck">
+                        <div class="card">
+                            <a href="@Url.Action("Details/bc0104cd-2bd9-4980-bf9a-1a44a01538d4", "ProductView")" style="text-align:center">
+                                <img class="card-img-top" src="~/Content/ProductImages/bc0104cd-2bd9-4980-bf9a-1a44a01538d4.jfif" alt="Card image cap" style="height:250px;width:auto">
+                            </a>
+                            <div class="card-body">
+                                <a href="@Url.Action("Details/bc0104cd-2bd9-4980-bf9a-1a44a01538d4", "ProductView")">
+                                    <h5 class="card-title text-dark">Samsung Galaxy Tab A 10.1 WiFi 2019 32 GB (black)</h5>
+                                </a>
+                                <ul>
+                                    <li>10,1" Full HD-skärm</li>
+                                    <li>32 GB lagring + microSD-kortplats</li>
+                                    <li>Högtalare med Dolby Atmos</li>
+                                </ul>
+                                <div class="card-text">
+                                    <p class="text-success">Delivery time: 3-5 weekdays</p>
+
+                                    <p class="text-danger font-weight-bold">Price : 12 666:-</p>
+                                </div>
+                                <a href="@Url.Action("AddToBasket", "Basket", new { Id="bc0104cd-2bd9-4980-bf9a-1a44a01538d4"})" class="btn btn-outline-primary float-right">Add to Basket</a>
+                                <a href="@Url.Action("AddToWishList", "WishList", new { Id="bc0104cd-2bd9-4980-bf9a-1a44a01538d4"})" class="fa fa-heart fa-2x text-danger float-left"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--CARD2-->
+
+        <!--CARD3-->
+        <div class="col-md-4">
+            <div class="card border-0">
+                <div class="card-body">
+                    <div class="card-deck">
+                        <div class="card">
+                            <a href="@Url.Action("Details/739bbafd-487a-484b-93fd-6d567c8358a6", "ProductView")" style="text-align:center">
+                                <img class="card-img-top" src="~/Content/ProductImages/739bbafd-487a-484b-93fd-6d567c8358a6.jpg" alt="Card image cap" style="height:250px;width:auto">
+                            </a>
+                            <div class="card-body">
+                                <a href="@Url.Action("Details/739bbafd-487a-484b-93fd-6d567c8358a6", "ProductView")">
+                                    <h5 class="card-title text-dark">Huawei P30 Pro smartphone 128 GB (breathing crystal)</h5>
+                                </a>
+                                <ul>
+                                    <li>4,7-tums Retina HD-skärm</li>
+                                    <li>Står emot vatten och damm</li>
+                                    <li>12 MP-kamera med video i 4K</li>
+                                </ul>
+                                <div class="card-text">
+                                    <p class="text-success">Delivery time: 3-5 weekdays</p>
+
+                                    <p class="text-danger font-weight-bold">Price  23 099:-</p>
+                                </div>
+                                <a href="@Url.Action("AddToBasket", "Basket", new { Id="739bbafd-487a-484b-93fd-6d567c8358a6"})" class="btn btn-outline-primary float-right">Add to Basket</a>
+                                <a href="@Url.Action("AddToWishList", "WishList", new { Id="739bbafd-487a-484b-93fd-6d567c8358a6"})" class="fa fa-heart fa-2x text-danger float-left"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <!--CARD3-->
+
     </div>
 </div>
+<!--GRID End-->
+
+
 
 
 
