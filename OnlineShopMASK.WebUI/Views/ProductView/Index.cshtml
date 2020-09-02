@@ -3,18 +3,11 @@
     ViewBag.Title = "Index";
 }
 
-<h1>Products</h1>
-
-<form asp-controller="ProductView" asp-action="Index">
-    <p>
-        <input type="text" name="searchString">
-        <input type="submit" value="Search" />
-    </p>
-</form>
+<hr/>
 
 <div class="row">
     <div class="col-md-2">
-        <h4>Filter by Category</h4>
+        <h4>Category</h4>
         <div class="list-group">
             @Html.ActionLink("All", "Index", null, new { @class = Request["Category"] == null ? "list-group-item active" : "list-group-item" })
             @foreach (var cat in Model.ProductCategory)

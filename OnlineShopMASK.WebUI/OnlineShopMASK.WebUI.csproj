@@ -446,6 +446,7 @@
     <Content Include="Views\Basket\Checkout.cshtml" />
     <Content Include="Views\Basket\ThankYou.cshtml" />
     <Content Include="Views\WishList\WishListSummary.cshtml" />
+    <Content Include="Views\Home\AdminPage.cshtml" />
     <Content Include="Views\ProductView\SearchLaptop.cshtml" />
     <Content Include="Views\ProductView\SearchTablet.cshtml" />
   </ItemGroup>
