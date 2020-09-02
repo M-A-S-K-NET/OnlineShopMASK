@@ -244,6 +244,7 @@
     <Content Include="Content\ProductImages\Warranty.png" />
     <Content Include="Content\RatingImages\StarFade.gif" />
     <Content Include="Content\RatingImages\StarGlow.gif" />
+    <Content Include="Content\Site.css" />
     <Content Include="Content\Stie.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />

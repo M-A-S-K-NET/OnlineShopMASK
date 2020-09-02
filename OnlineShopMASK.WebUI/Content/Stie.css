@@ -26,14 +26,18 @@ textarea {
     background-color: grey;
     padding: 10px;
 }
-
+/*
 .card {
     border: double;
     padding: 5px;
+}*/
+
+
+.img-size {
+    width: auto !important;
+    height: 195px !important;
+    background: red;
 }
-
-
-
 
 /*Rating Style */
 .commentBox {
