@@ -3,7 +3,7 @@
     padding-left: 15px;
     padding-right: 15px;
     /*padding-top: 45px; /* Needed for fixed headers/menu */
-    /*padding-bottom: 60px;*/*/
+    /*padding-bottom: 60px;*/
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -35,23 +35,34 @@ textarea {
 }
 
 /*footer fixing*/
+*{
+    margin:0;
+    padding:0;
+}
 html,
 body {
-    margin: 0;
-    padding: 0;
+    
     height: 100%;
 }
 
+
+
 #Wrapper {
     min-height: 100%;
-    position: relative;
+   
+}
+#main
+{
+    overflow:auto;
+    padding-bottom:300px;
 }
 
-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 300px; /* Height of the footer */
+#footer {
+    position: relative;
+    height:300px;
+    margin-top:-300px;
+    clear:both;
+   
 }
 
 
