@@ -33,6 +33,7 @@ namespace OnlineShopMASK.WebUI.Controllers
 
             return View(products.ToList());
         }
+
         [AllowAnonymous]
         public ActionResult Details(string id)
         {
@@ -93,6 +94,12 @@ namespace OnlineShopMASK.WebUI.Controllers
         public ActionResult FAQ()
         {
             ViewBag.Message = "Frequently Asked Questions ";
+            return View();
+        }
+
+        public ActionResult AdminPage()
+        {
+            ViewBag.Message = "Admin";
             return View();
         }
     }

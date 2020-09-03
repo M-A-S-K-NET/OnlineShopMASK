@@ -1,7 +1,7 @@
 ﻿@model OnlineShopMASK.Core.ViewModels.ProductListViewModel
 
 @{
-    ViewBag.Title = "Search";
+    ViewBag.Title = "laptops";
 }
 
 
@@ -15,7 +15,7 @@
 
 <div class="row">
 
-    @foreach (var item in Model.Products.Where(c => c.Category == "Mobiles"))
+    @foreach (var item in Model.Products.Where(c => c.Category == "Laptop"))
     {
         <div class="col-sm-4" style="height:510px;">
             <div class="card border-dark mb-1" style="height:500px;">
