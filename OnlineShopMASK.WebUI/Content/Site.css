@@ -39,7 +39,55 @@ textarea {
 }
 
 
+/*Zooming Styles*/
 
+.img-zoom-container {
+            position: relative;
+        }
+
+        .img-zoom-lens {
+            position: absolute;
+            border: 1px solid #d4d4d4;
+            /*set the size of the lens:*/
+            width: 40px;
+            height: 40px;
+        }
+
+        .img-zoom-result {
+            border: 1px solid #d4d4d4;
+            /*set the size of the result div:*/
+            width: 300px;
+            height: 300px;
+        }
+
+
+        /*footer fixing*/
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        #Wrapper {
+            min-height: 100%;
+        }
+
+        #main {
+            overflow: auto;
+            padding-bottom: 300px;
+        }
+
+        #footer {
+            position: relative;
+            height: 300px;
+            margin-top: -300px;
+            clear: both;
+        }
 
 
 
