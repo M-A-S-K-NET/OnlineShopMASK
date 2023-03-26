@@ -3,7 +3,7 @@
     ViewBag.Title = "Index";
 }
 
-<hr/>
+<hr />
 
 <div class="row">
     <div class="col-md-2">
@@ -22,26 +22,21 @@
 
             @foreach (var item in Model.Products)
             {
-                <div class="col-sm-4" style="height:510px;">
-                    <div class="card border-dark mb-1" style="height:500px;">
-                        <img class="card-img-top img-fluid" style="height:200px; width:250px" src="~/Content/ProductImages/@item.Image" />
+                <div class="col-sm-4 text-center border-0">
+                    <div class="card mb-1">
+                        <img class="card-img-top" src="~/Content/ProductImages/@item.Image" />
                         <div class="card-body">
-                            <h5 class="card-title" style="height:100px">
-                                <strong>
-                                    @Html.ActionLink(item.Name, "Details", new { id = item.Id })
-                                </strong>
+                            <h5 class="card-title">
+                                @Html.ActionLink(item.Name, "Details", new { id = item.Id })
                             </h5>
-                            @*<p class="card-text" style="height:300px" >@item.Description</p>*@
-                            <p class="card-text" style="height:50px"><strong>Price:</strong>@item.Price</p><hr />
-
-                            <a href="@Url.Action("AddToBasket", "Basket", new { Id=item.Id})" class="btn btn-outline-primary float-right">Add to Basket</a>
-                            <a href="@Url.Action("AddToWishList", "WishList", new { Id=item.Id})" class="fa fa-heart fa-2x text-danger float-left"></a>
-
-
+                            <p class="card-text"><strong>Price : @item.Price</strong></p><hr />
+                            <div class="d-flex justify-content-between">
+                                <a href="@Url.Action("AddToBasket", "Basket", new { Id=item.Id})" class="btn btn-outline-primary card-link">Add to Basket</a>
+                                <a href="@Url.Action("AddToWishList", "WishList", new { Id=item.Id})" class="fa fa-heart fa-2x text-danger card-link" aria-hidden="true"></a>
+                            </div>
                         </div>
                     </div>
-                 </div>
-
+                </div>
             }
         </div>
     </div>
